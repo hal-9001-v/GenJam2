@@ -2,24 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
-[RequireComponent(typeof(Rigidbody2D))]
+public class TestDefense : BaseDefense
+{   
+   private void Awake() {
+        gameObject.tag = "Defense";
+       lifespan = 2f;
+       health = 1;
+   }
+    private void Start() {
+        StartCoroutine(DestroyOnElapsed());
+    }  
 
-public class MainDrawingCharacter : BaseDefense
-{
+     override protected void Die(){
 
-
-    private void Awake() {
-        gameObject.tag = "Drawing";
-        health = 10;
-    }   
-
-    override protected void Die(){
-
-      Debug.Log("La palmas");
+        Destroy(father);
 
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other) {
         
    
@@ -29,7 +28,6 @@ public class MainDrawingCharacter : BaseDefense
            case "EnemyTest": 
                 Hurt(other.gameObject.GetComponent<EnemyTest>().damage);
                 Destroy(other.gameObject);
-                FindObjectOfType<Pulsator>().HurtAnimation();
            break;
 
 
@@ -38,8 +36,4 @@ public class MainDrawingCharacter : BaseDefense
        }
 
     }
-
-       
-        
-     
 }

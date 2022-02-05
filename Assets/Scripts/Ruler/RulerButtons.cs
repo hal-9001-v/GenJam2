@@ -13,10 +13,15 @@ Type3,
 
 public class RulerButtons : MonoBehaviour
 {
+    [Header("RulerComponents")]
     [SerializeField] private  Button[]  rulers;
     [SerializeField] private Sprite[] rulerSprites;
     [SerializeField] private  SpriteRenderer cursorSprite;  
     [SerializeField] private RulerType currentType;
+
+    [Header("Ruler Prefabs")]
+    [SerializeField] GameObject[] rulerSpawnables;
+    
     public int spawnCost;
     private void Awake() {
 
@@ -40,11 +45,21 @@ public class RulerButtons : MonoBehaviour
         });
 
     }
-    public void SpawnRuler(RulerType rulerType){
+
+    private void Start() {
+        SetRulerType((int)RulerType.Type1);
+    }
+    public void SpawnRuler(RulerType rulerType, Vector2 pos, Quaternion rotation){
         
-        Debug.Log("Spawn Ruler " + rulerType);
+        Instantiate(rulerSpawnables[(int)rulerType], pos, rotation);
 
     }
+    public Sprite GetSpritedRuler(RulerType rulerType){
+        
+        return rulerSprites[(int)rulerType];
+        
+    }
+
     public RulerType GetRulerType(){
         return currentType;
     }
