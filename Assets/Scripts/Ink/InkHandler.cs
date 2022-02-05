@@ -42,6 +42,8 @@ public class InkHandler : MonoBehaviour
 
     }
 
+    
+
     public int GetInk(){
         
         return (int)currentInk;

@@ -22,9 +22,17 @@ public class RulerButtons : MonoBehaviour
     [Header("Ruler Prefabs")]
     [SerializeField] GameObject[] rulerSpawnables;
     
+    [SerializeField] GameObject arrowPrefab;
+    
+    [Header("Ruler Costs")]
     public int spawnCost;
+    public int improveCost;
+    public int improveTime;
+    public int improveHealth;
+    public int improveDamage;
+    private int _id;
     private void Awake() {
-
+        _id = 0;
           rulers[(int)RulerType.Type1].onClick.AddListener(() =>
         {
             //Ruler1
@@ -51,9 +59,20 @@ public class RulerButtons : MonoBehaviour
     }
     public void SpawnRuler(RulerType rulerType, Vector2 pos, Quaternion rotation){
         
-        Instantiate(rulerSpawnables[(int)rulerType], pos, rotation);
+        
+        GameObject instance = Instantiate(rulerSpawnables[(int)rulerType], pos, rotation);
+        instance.name =  _id.ToString();
+        _id++;
+        
+        if(rulerType == RulerType.Type3) {
+            Instantiate(arrowPrefab, pos, rotation);
+            return;
+        }
 
+        
     }
+    
+  
     public Sprite GetSpritedRuler(RulerType rulerType){
         
         return rulerSprites[(int)rulerType];
@@ -73,14 +92,22 @@ public class RulerButtons : MonoBehaviour
 
             case 0:
             spawnCost = 10;
+            improveCost = 20;
+            improveTime = 2;
+            improveHealth = 3;
+            
             break;
 
             case 1:
             spawnCost = 20;
+            improveCost = 30;
+            improveTime = 3;
+            improveHealth = 3;
             break;
 
             case 2:
-            spawnCost = 30;
+            spawnCost = 15;
+            improveCost = 200;
             break; 
             
             default:

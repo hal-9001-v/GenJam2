@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestDefense : BaseDefense
+public class ArrowDefense : BaseDefense
 {   
    private void Awake() {
-        gameObject.tag = "Defense";
-       lifespan = 2f;
+        gameObject.tag = "ShootingDefense";
+       lifespan = 0.2f;
        health = 1;
+        totalHealth = health;
    }
     private void Start() {
-        StartCoroutine(DestroyOnElapsed());
+         StartCoroutine(DestroyOnElapsed());
     }  
 
      override protected void Die(){
@@ -25,9 +26,11 @@ public class TestDefense : BaseDefense
         Debug.Log("Collision with" + other.gameObject.tag);
        switch(other.gameObject.tag){
 
-           case "EnemyTest": 
-                Hurt(other.gameObject.GetComponent<EnemyTest>().damage);
-                Destroy(other.gameObject);
+           case "EnemyType1": 
+           case "EnemyType2": 
+           case "EnemyType3": 
+                Hurt(other.gameObject.GetComponent<Enemy>().damage);
+                other.gameObject.GetComponent<Enemy>().Hurt();
            break;
 
 
