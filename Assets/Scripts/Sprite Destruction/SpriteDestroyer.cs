@@ -8,10 +8,10 @@ public class SpriteDestroyer : MonoBehaviour
     [SerializeField] [Range(0.1f, 1)] float _radius;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        var destructible = collision.gameObject.GetComponent<DestructibleSprite>();
+        var destructible = collision.gameObject.GetComponent<ChangeableSprite>();
         if (destructible)
         {
-            destructible.Hurt(collision.ClosestPoint(transform.position), _radius);
+            destructible.Destroy(collision.ClosestPoint(transform.position), _radius);
 
             Destroy(gameObject);
         }
