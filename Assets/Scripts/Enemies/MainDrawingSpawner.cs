@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainDrawingSpawner : MonoBehaviour
 {
     [Header("Spawn Prefabs")]
-    [SerializeField] private GameObject spawnablePrefab;
+    [SerializeField] private GameObject[] spawnablePrefabs;
 
 
     
@@ -36,7 +36,7 @@ public class MainDrawingSpawner : MonoBehaviour
         if(!canSpawn) return;
 
 
-        StartCoroutine(SpawnWait(2f));
+        StartCoroutine(SpawnWait(4f));
         canSpawn = false;
     }
 
@@ -44,7 +44,7 @@ public class MainDrawingSpawner : MonoBehaviour
         
         
         yield return new WaitForSeconds(s);
-        SpawnInstance(spawnablePrefab);
+        SpawnInstance(spawnablePrefabs[Random.Range(0,3)]);
         canSpawn = true;
 
     }
@@ -85,7 +85,7 @@ public class MainDrawingSpawner : MonoBehaviour
     [ContextMenu("ForceSpawn")]
     public void forceSpawn(){
 
-        SpawnInstance(spawnablePrefab);
+        SpawnInstance(spawnablePrefabs[Random.Range(0,3)]);
 
     }
     #endregion

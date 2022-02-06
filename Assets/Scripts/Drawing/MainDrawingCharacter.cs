@@ -23,11 +23,13 @@ public class MainDrawingCharacter : BaseDefense
     private void OnTriggerEnter2D(Collider2D other) {
         
    
-        Debug.Log("Collision with" + other.gameObject.tag);
+       // Debug.Log("Collision with" + other.gameObject.tag);
        switch(other.gameObject.tag){
 
-           case "EnemyTest": 
-                Hurt(other.gameObject.GetComponent<EnemyTest>().damage);
+           case "EnemyType1": 
+           case "EnemyType2": 
+           case "EnemyType3":  
+                Hurt(other.gameObject.GetComponent<Enemy>().damage);
                 Destroy(other.gameObject);
                 FindObjectOfType<Pulsator>().HurtAnimation();
            break;

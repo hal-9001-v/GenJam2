@@ -7,7 +7,9 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    
+
+    public int health;    
+    public int totalHealth;    
     public float speed;
     public int damage;
     public MainDrawingSpawner enemySpawner;
@@ -15,6 +17,7 @@ public abstract class Enemy : MonoBehaviour
     
     
     public abstract void EnemyMovement();
+    public abstract void Hurt();
 
     void OnDestroy() {
         

@@ -6,7 +6,17 @@ TagManager:
   tags:
   - Drawing
   - EnemyTest
+  - WallDefense
+  - SoldierDefense
+  - ShootingDefense
+  - EnemyType1
+  - EnemyType2
+  - EnemyType3
   - Defense
+  - Background
+  - WallDrawing
+  - SoldierDrawing
+  - Arrow
   layers:
   - Default
   - TransparentFX
