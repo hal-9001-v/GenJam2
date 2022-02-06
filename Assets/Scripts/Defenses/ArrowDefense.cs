@@ -33,7 +33,7 @@ public class ArrowDefense : BaseDefense
                 other.gameObject.GetComponent<Enemy>().Hurt();
            break;
 
-
+           case "Arrow": return;
            default: Hurt(1);
            break;
        }

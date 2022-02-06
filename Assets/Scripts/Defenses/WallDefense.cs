@@ -35,7 +35,7 @@ public class WallDefense : BaseDefense
                 Hurt(other.gameObject.GetComponent<Enemy>().damage);
            break;
 
-
+            case "Arrow": return;
            default: Hurt(1);
            break;
        }

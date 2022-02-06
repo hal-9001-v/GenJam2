@@ -26,12 +26,10 @@ public class Arrow : MonoBehaviour
            case "EnemyType1": 
            case "EnemyType2": 
                 other.gameObject.GetComponent<Enemy>().Hurt();
-                Destroy(this.gameObject);
             break;
            case "EnemyType3": 
                 other.gameObject.GetComponent<Enemy>().Hurt();
                 other.gameObject.GetComponent<Enemy>().Hurt();
-                Destroy(this.gameObject);
            break;
 
        }
