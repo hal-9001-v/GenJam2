@@ -8,20 +8,6 @@ using UnityEngine;
 [RequireComponent(typeof(Hurter))]
 public abstract class Enemy : MonoBehaviour
 {
-<<<<<<< HEAD
-
-    public int health;    
-    public int totalHealth;    
-    public float speed;
-    public int damage;
-    public MainDrawingSpawner enemySpawner;
-    public Rigidbody2D rb2D;
-    
-    
-    public abstract void EnemyMovement();
-    public abstract void Hurt();
-=======
->>>>>>> PuttingThingsTogether
 
     [SerializeField] [Range(1, 20)] protected float speed;
         

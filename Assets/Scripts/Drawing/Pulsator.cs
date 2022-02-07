@@ -35,13 +35,10 @@ public class Pulsator : MonoBehaviour
         transform.DOScale(animationScale * _startingScale, animationDuration).SetLoops(-1, LoopType.Yoyo).SetId("CenterAnim");
         spriteRenderer.DOColor(new Vector4(0.58f, 1, 0.51f, 11), 0.4f).SetLoops(-1, LoopType.Yoyo).SetId("CenterAnim");
     }
-<<<<<<< HEAD
-    public void HurtAnimation(){
-        StartCoroutine(CamShake.Shake(.15f,.4f, FindObjectOfType<Camera>().transform));
-=======
     public void HurtAnimation()
     {
->>>>>>> PuttingThingsTogether
+        StartCoroutine(CamShake.Shake(.15f, .4f, FindObjectOfType<Camera>().transform));
+
         DOTween.PauseAll();
         transform.DOScale(hurtScale * _startingScale, hurtDuration).SetLoops(2, LoopType.Yoyo).SetId("CenterHurt");
         spriteRenderer.DOColor(new Vector4(1, 0.58f, 0.51f, 11), 0.15f).SetLoops(2, LoopType.Yoyo).SetId("CenterHurt");

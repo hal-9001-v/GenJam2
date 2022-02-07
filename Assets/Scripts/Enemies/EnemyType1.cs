@@ -2,13 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-<<<<<<< HEAD:Assets/Scripts/Enemies/EnemyType1.cs
-public class EnemyType1 : Enemy
-=======
-
 public class EnemyTest : Enemy
 
->>>>>>> PuttingThingsTogether:Assets/Scripts/Enemies/EnemyTest.cs
+
 {
     [Header("Settings")]
     [SerializeField] private float oscillation;
@@ -22,17 +18,6 @@ public class EnemyTest : Enemy
         Initialize();
 
         elapsedTime = 0;
-<<<<<<< HEAD:Assets/Scripts/Enemies/EnemyType1.cs
-        damage = 1;
-        health = 1;
-        totalHealth = health;
-        
-        speed = 5000;
-        gameObject.tag = "EnemyType1"; 
-        enemySpawner = FindObjectOfType<MainDrawingSpawner>();
-        rb2D = GetComponent<Rigidbody2D>();  
-=======
->>>>>>> PuttingThingsTogether:Assets/Scripts/Enemies/EnemyTest.cs
     }
 
     private void Start()
@@ -48,10 +33,6 @@ public class EnemyTest : Enemy
     {
         EnemyMovement();
     }   
-
-    override public void Hurt(){
-        Destroy(this.gameObject);
-    }
 
     override public void EnemyMovement()
     {

@@ -9,6 +9,8 @@ public class Health : MonoBehaviour
     [Header("Settings")]
     [SerializeField] [Range(1, 10)] int _maxHealthPoins = 1;
 
+    public int maxHealthPoins { get { return _maxHealthPoins; } }
+
     public int currentHealthPoints { get; private set; }
 
     /// <summary>
@@ -64,6 +66,13 @@ public class Health : MonoBehaviour
     public void Restore()
     {
         currentHealthPoints = _maxHealthPoins;
+    }
+
+    public void ModifyMaxHealth(int newMaxHealth)
+    {
+        _maxHealthPoins = newMaxHealth;
+
+        Restore();
     }
 
 }

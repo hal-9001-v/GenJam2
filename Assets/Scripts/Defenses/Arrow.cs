@@ -19,6 +19,7 @@ public class Arrow : MonoBehaviour
         
       }
 
+    /*
    private void OnTriggerEnter2D(Collider2D other) {
        
        switch(other.tag){
@@ -34,4 +35,5 @@ public class Arrow : MonoBehaviour
 
        }
    }
+    */
 }
