@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTest : Enemy
-
-
+public class BasicEnemy : Enemy
 {
     [Header("Settings")]
     [SerializeField] private float oscillation;

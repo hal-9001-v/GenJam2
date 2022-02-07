@@ -6,7 +6,7 @@ using UnityEngine;
 public class Hurter : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] List<HealthTag> _targets;
+    [SerializeField] List<WeightedTarget> _targets;
     [SerializeField] [Range(1, 5)] int _damage;
     [SerializeField] SpriteDestroyer _spriteDestroyer;
 
@@ -18,23 +18,31 @@ public class Hurter : MonoBehaviour
 
         if (health)
         {
-            if (_targets.Contains(health.healthTag))
+            foreach (var weightedTarget in _targets)
             {
-
-                health.Hurt(_damage);
-
-                if (_spriteDestroyer)
+                if (weightedTarget.target == health.healthTag)
                 {
-                    _spriteDestroyer.TryHurtSprite(collision);
-                }
+                    health.Hurt(_damage * weightedTarget.damageScale);
 
-                if (hitSuccessAction != null)
-                {
-                    hitSuccessAction.Invoke(health, collision);
-                }
+                    if (_spriteDestroyer)
+                    {
+                        _spriteDestroyer.TryHurtSprite(collision);
+                    }
 
+                    if (hitSuccessAction != null)
+                    {
+                        hitSuccessAction.Invoke(health, collision);
+                    }
+                }
             }
         }
+    }
+
+    [Serializable]
+    class WeightedTarget
+    {
+        public HealthTag target;
+        [Range(0, 5)] public int damageScale = 1;
     }
 
 }

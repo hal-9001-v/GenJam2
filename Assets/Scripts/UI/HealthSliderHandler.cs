@@ -4,17 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HealthSliderHandler : MonoBehaviour
 {
-    private Slider _healthSlider;
-    Health _health;
+    [Header("References")]
+    [SerializeField] Slider _slider;
+    [SerializeField] Health _health;
 
     private void Awake()
     {
-        _health = GetComponentInParent<Health>();
-        _healthSlider = GetComponent<Slider>();
+        if (_health)
+        {
+            _health.hurtAction += () =>
+            {
+                UpdateBar(_health.maxHealthPoins / _health.currentHealthPoints);
+            };
+
+            _health.deadAction += () =>
+            {
+                UpdateBar(0);
+            };
+        }
     }
 
-    private void Update()
+    private void Start()
     {
-        _healthSlider.value = ((float)_health.currentHealthPoints / (float)_health.maxHealthPoins) * 100;
+        if (_health)
+        {
+            UpdateBar(_health.maxHealthPoins / _health.currentHealthPoints);
+        }
+    }
+
+
+    public void UpdateBar(float fillAmount)
+    {
+        _slider.value = fillAmount;
     }
 }
