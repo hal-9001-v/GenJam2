@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class Health : MonoBehaviour
 {
     [Header("Settings")]
-    [Range(1, 5)] int _maxHealthPoins = 1;
+    [SerializeField] [Range(1, 10)] int _maxHealthPoins = 1;
 
     public int currentHealthPoints { get; private set; }
 
@@ -25,7 +26,7 @@ public class Health : MonoBehaviour
 
     private void Awake()
     {
-        currentHealthPoints = _maxHealthPoins;
+        Restore();
     }
 
     /// <summary>
@@ -58,6 +59,11 @@ public class Health : MonoBehaviour
                 hurtAction.Invoke();
             }
         }
+    }
+
+    public void Restore()
+    {
+        currentHealthPoints = _maxHealthPoins;
     }
 
 }

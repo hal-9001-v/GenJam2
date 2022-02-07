@@ -8,8 +8,9 @@ public class Hurter : MonoBehaviour
     [Header("Settings")]
     [SerializeField] List<HealthTag> _targets;
     [SerializeField] [Range(1, 5)] int _damage;
+    [SerializeField] SpriteDestroyer _spriteDestroyer;
 
-    public Action<Health> hitSuccessAction;
+    public Action<Health, Collider2D> hitSuccessAction;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,10 +23,16 @@ public class Hurter : MonoBehaviour
 
                 health.Hurt(_damage);
 
+                if (_spriteDestroyer)
+                {
+                    _spriteDestroyer.TryHurtSprite(collision);
+                }
+
                 if (hitSuccessAction != null)
                 {
-                    hitSuccessAction.Invoke(health);
+                    hitSuccessAction.Invoke(health, collision);
                 }
+
             }
         }
     }
