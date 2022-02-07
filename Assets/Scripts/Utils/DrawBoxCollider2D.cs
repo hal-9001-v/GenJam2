@@ -5,31 +5,35 @@ using UnityEngine;
 
 public class DrawBoxCollider2D : MonoBehaviour
 {
-    [SerializeField] private GameObject linePrefab;
-    LineRenderer lineRenderer;
-    BoxCollider2D boxCollider2D;
+    [SerializeField] GameObject LinePrefab;
+    [SerializeField] Color LineColor;
+
+    private LineRenderer _line;
+    private BoxCollider2D _boxCol;
 
     void Start()
     {
-        lineRenderer = Instantiate(linePrefab).GetComponent<LineRenderer>();
-        lineRenderer.transform.SetParent(transform);
-        lineRenderer.transform.localPosition = Vector3.zero;
-        boxCollider2D = GetComponent<BoxCollider2D>();
+        _line = Instantiate(LinePrefab).GetComponent<LineRenderer>();
+        _line.startColor = LineColor;
+        _line.endColor = LineColor;
+        _line.transform.SetParent(transform);
+        _line.transform.localPosition = Vector3.zero;
+        _boxCol = GetComponent<BoxCollider2D>();
        
     }
 
     void Update()
     {
-        HiliteBox();
+        HilightCollider();
     }
 
-    void HiliteBox()
+    void HilightCollider()
     {
-        Vector3[] positions = new Vector3[4];
-        positions[0] = transform.TransformPoint( new Vector3(boxCollider2D.size.x / 2.0f, boxCollider2D.size.y / 2.0f,0));
-        positions[1] = transform.TransformPoint(new Vector3(-boxCollider2D.size.x / 2.0f, boxCollider2D.size.y / 2.0f,0));
-        positions[2] = transform.TransformPoint(new Vector3(-boxCollider2D.size.x / 2.0f, -boxCollider2D.size.y / 2.0f,0));
-        positions[3] = transform.TransformPoint(new Vector3(boxCollider2D.size.x / 2.0f, -boxCollider2D.size.y / 2.0f,0));
-        lineRenderer.SetPositions(positions);
+        Vector3[] pos = new Vector3[4];
+        pos[0] = transform.TransformPoint( new Vector3(_boxCol.size.x / 2.0f, _boxCol.size.y / 2.0f,0));
+        pos[1] = transform.TransformPoint(new Vector3(-_boxCol.size.x / 2.0f, _boxCol.size.y / 2.0f,0));
+        pos[2] = transform.TransformPoint(new Vector3(-_boxCol.size.x / 2.0f, -_boxCol.size.y / 2.0f,0));
+        pos[3] = transform.TransformPoint(new Vector3(_boxCol.size.x / 2.0f, -_boxCol.size.y / 2.0f,0));
+        _line.SetPositions(pos);
     }
 }

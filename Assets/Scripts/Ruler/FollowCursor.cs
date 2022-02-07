@@ -13,4 +13,8 @@ public class FollowCursor : MonoBehaviour
         cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
        transform.position = cursorPos;
    }
+
+
+  
+ 
 }

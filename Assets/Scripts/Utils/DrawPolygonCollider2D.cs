@@ -6,38 +6,39 @@ using UnityEngine;
 [RequireComponent (typeof(PolygonCollider2D))]
 public class DrawPolygonCollider2D : MonoBehaviour
 {
-    [SerializeField] private GameObject linePrefab;
-    LineRenderer lineRenderer;
-    List<LineRenderer> lineRendererList;
-    PolygonCollider2D polygonCollider2D;
-    int polycount;
+    [SerializeField]  GameObject LinePrefab;
+    [SerializeField] Color LineColor;
+    private LineRenderer _line;
+    private List<LineRenderer> _lineList;
+    private PolygonCollider2D _polygonCol;
+    private int polycount;
     void Start()
     {
-        lineRendererList = new List<LineRenderer>();
-        polygonCollider2D = GetComponent<PolygonCollider2D>();
-        polycount = polygonCollider2D.pathCount;
+        
+        _lineList = new List<LineRenderer>();
+        _polygonCol = GetComponent<PolygonCollider2D>();
+        polycount = _polygonCol.pathCount;
        
         for (int i = 0; i < polycount; i++){
-        lineRenderer = Instantiate(linePrefab).GetComponent<LineRenderer>();
-        lineRenderer.transform.SetParent(transform);
-        lineRenderer.transform.localPosition = Vector3.zero;
-        lineRendererList.Add(lineRenderer);
+            _line = Instantiate(LinePrefab).GetComponent<LineRenderer>();
+            _line.startColor = LineColor;
+            _line.endColor = LineColor;
+            _line.transform.SetParent(transform);
+            _line.transform.localPosition = Vector3.zero;
+            _lineList.Add(_line);
         }
-
     }
 
     void Update()
     {
-        HiliteCollider();
+        HilightCollider();
     }
 
-    void HiliteCollider()
+    void HilightCollider()
     {
-
-  
             for(int i = 0; i < polycount; i++) {
             
-                var pointsI = polygonCollider2D.GetPath(i);
+                var pointsI = _polygonCol.GetPath(i);
                 Vector3[] positions = new Vector3[pointsI.Length];
 
                 for(int j = 0; j < pointsI.Length; j++)
@@ -45,13 +46,9 @@ public class DrawPolygonCollider2D : MonoBehaviour
                     positions[j] = transform.TransformPoint(pointsI[j]);
                 }
 
-                lineRendererList[i].positionCount = pointsI.Length;
-               lineRendererList[i].SetPositions(positions);
-            }
-        
-
-     
-           
+                _lineList[i].positionCount = pointsI.Length;
+               _lineList[i].SetPositions(positions);
+            }  
         
     }
 }

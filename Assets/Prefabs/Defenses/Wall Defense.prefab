@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linePrefab: {fileID: 8619511188706494699, guid: 94f070ec81dee254b8de41a7ac9f3be1, type: 3}
+  LineColor: {r: 1, g: 1, b: 0, a: 1}
 --- !u!1 &6275474046298306648
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linePrefab: {fileID: 8619511188706494699, guid: 94f070ec81dee254b8de41a7ac9f3be1, type: 3}
+  LineColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &8158258190368832409
 PrefabInstance:
   m_ObjectHideFlags: 0
