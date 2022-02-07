@@ -110,9 +110,9 @@ public class ChangeableSprite : MonoBehaviour
             */
 
         #region Find Destroyed Pixels
-        //Vector2 localPosition = (worldPosition - transform.position);
-        Vector2 localPosition = transform.InverseTransformPoint(worldPosition);
+        Vector2 localPosition = (worldPosition - transform.position);
         localPosition = localPosition - zeroPoint;
+        //Vector2 localPosition = transform.InverseTransformPoint(worldPosition);
 
         _lastHit = localPosition;
 

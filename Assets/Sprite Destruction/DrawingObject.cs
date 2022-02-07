@@ -8,6 +8,11 @@ public class DrawingObject : MonoBehaviour
     [Header("References")]
     [SerializeField] DrawLayer[] _layers;
 
+    [Header("Settings")]
+    [SerializeField] bool _atAwake;
+
+    public int layerCount { get { return _layers.Length; } }
+
     Queue<DrawLayer> _layerQueue;
     DrawLayer _currentLayer;
     DrawLayer _lastLayer;
@@ -23,6 +28,11 @@ public class DrawingObject : MonoBehaviour
             layer.brush.enabled = false;
         }
 
+
+        if (_atAwake)
+        {
+            StartDraw(null);
+        }
     }
 
     public void StartDraw(Action endAction)
@@ -47,6 +57,18 @@ public class DrawingObject : MonoBehaviour
         DrawNextLayer();
     }
 
+    public void StartDrawingIDLayer(int layerIndex, Action endAction)
+    {
+        if (layerIndex >= 0 && layerIndex < _layers.Length)
+        {
+            _layers[layerIndex].brush.enabled = true;
+            _layers[layerIndex].brush.SetTarget(_layers[layerIndex].changeableSprite);
+            _layers[layerIndex].follower.StartPath(_layers[layerIndex].paths, endAction);
+        }
+    }
+
+
+
     public void DrawNextLayer()
     {
         if (_layerQueue.Count != 0)
@@ -60,8 +82,8 @@ public class DrawingObject : MonoBehaviour
             _currentLayer = _layerQueue.Dequeue();
 
             _currentLayer.brush.enabled = true;
-            _currentLayer.follower.StartPath(_currentLayer.paths, DrawNextLayer);
             _currentLayer.brush.SetTarget(_currentLayer.changeableSprite);
+            _currentLayer.follower.StartPath(_currentLayer.paths, DrawNextLayer);
 
         }
         else
