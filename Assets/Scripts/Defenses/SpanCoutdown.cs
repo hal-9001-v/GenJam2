@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpanCoutdown : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] [Range(1, 10)] float _time;
+    [SerializeField] [Range(1, 20)] float _time;
 
     public Action endOfCountdown;
 

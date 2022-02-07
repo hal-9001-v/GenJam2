@@ -17,6 +17,7 @@ TagManager:
   - WallDrawing
   - SoldierDrawing
   - Arrow
+  - Paint
   layers:
   - Default
   - TransparentFX

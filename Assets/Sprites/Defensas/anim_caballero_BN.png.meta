@@ -47,6 +47,9 @@ TextureImporter:
   - first:
       213: 4281966760049207754
     second: anim_caballero_BN_15
+  - first:
+      213: -8686963603313199036
+    second: anim_caballero_BN_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -65,7 +68,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -132,6 +135,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -143,8 +170,8 @@ TextureImporter:
         y: 327
         width: 805
         height: 924
-      alignment: 9
-      pivot: {x: 0.56847084, y: 0.08243095}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -164,8 +191,8 @@ TextureImporter:
         y: 320
         width: 722
         height: 893
-      alignment: 9
-      pivot: {x: 0.6968825, y: 0.09717279}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -185,8 +212,8 @@ TextureImporter:
         y: 319
         width: 564
         height: 1090
-      alignment: 9
-      pivot: {x: 0.72631925, y: 0.07682587}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,8 +233,8 @@ TextureImporter:
         y: 319
         width: 572
         height: 1103
-      alignment: 9
-      pivot: {x: 0.76372737, y: 0.07392309}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -227,8 +254,8 @@ TextureImporter:
         y: 319
         width: 858
         height: 849
-      alignment: 9
-      pivot: {x: 0.8381123, y: 0.10363173}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -248,8 +275,8 @@ TextureImporter:
         y: 319
         width: 1345
         height: 842
-      alignment: 9
-      pivot: {x: 0.41494575, y: 0.10646115}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -269,8 +296,8 @@ TextureImporter:
         y: 327
         width: 1217
         height: 1052
-      alignment: 9
-      pivot: {x: 0.46110362, y: 0.08002556}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -287,11 +314,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 6869
-        y: 331
+        y: 327
         width: 1023
         height: 1412
-      alignment: 9
-      pivot: {x: 0.43059105, y: 0.027858075}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -311,8 +338,8 @@ TextureImporter:
         y: 319
         width: 1185
         height: 1442
-      alignment: 9
-      pivot: {x: 0.85286456, y: 0.026738245}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -332,8 +359,8 @@ TextureImporter:
         y: 304
         width: 1565
         height: 1131
-      alignment: 9
-      pivot: {x: 0.64871645, y: 0.050067313}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -353,8 +380,8 @@ TextureImporter:
         y: 289
         width: 846
         height: 849
-      alignment: 9
-      pivot: {x: 0.82023287, y: 0.08271324}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -374,8 +401,8 @@ TextureImporter:
         y: 289
         width: 555
         height: 849
-      alignment: 9
-      pivot: {x: 0.7252939, y: 0.08271324}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -395,8 +422,8 @@ TextureImporter:
         y: 289
         width: 594
         height: 857
-      alignment: 9
-      pivot: {x: 0.6988077, y: 0.094714135}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -416,8 +443,8 @@ TextureImporter:
         y: 289
         width: 723
         height: 894
-      alignment: 9
-      pivot: {x: 0.6729434, y: 0.072636515}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -437,8 +464,8 @@ TextureImporter:
         y: 297
         width: 798
         height: 924
-      alignment: 9
-      pivot: {x: 0.5609348, y: 0.071476035}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -446,6 +473,27 @@ TextureImporter:
       bones: []
       spriteID: ac963c8d41a9c6b30800000000000000
       internalID: 4281966760049207754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anim_caballero_BN_14
+      rect:
+        serializedVersion: 2
+        x: 14293
+        y: 1052
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448f4c7d0a4b17780800000000000000
+      internalID: -8686963603313199036
       vertices: []
       indices: 
       edges: []

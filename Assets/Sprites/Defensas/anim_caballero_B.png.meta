@@ -1,55 +1,100 @@
 fileFormatVersion: 2
-guid: 2f4cd9b1199a5eb40b45259500cfd8dd
+guid: 81d5cf2c6f3671f4bb0fa0758121545b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1022762035191925052
-    second: anim_caballero_color_0
+      213: 8294284413475481621
+    second: anim_caballero_BN_0
   - first:
-      213: -7372289293072558395
-    second: anim_caballero_color_1
+      213: 7659611343247586572
+    second: anim_caballero_BN_1
   - first:
-      213: -5483682470446691005
-    second: anim_caballero_color_2
+      213: 5581330198337111765
+    second: anim_caballero_BN_2
   - first:
-      213: -9149844644458411462
-    second: anim_caballero_color_3
+      213: -2038087394711450674
+    second: anim_caballero_BN_3
   - first:
-      213: -430945548030546403
-    second: anim_caballero_color_4
+      213: -1791494239300197981
+    second: anim_caballero_BN_4
   - first:
-      213: 4534344714435581225
-    second: anim_caballero_color_5
+      213: 1965817753279070960
+    second: anim_caballero_BN_5
   - first:
-      213: -8333199267020667798
-    second: anim_caballero_color_6
+      213: 1043900067288312630
+    second: anim_caballero_BN_6
   - first:
-      213: -9091482476097155575
-    second: anim_caballero_color_7
+      213: 150136226769662304
+    second: anim_caballero_BN_7
   - first:
-      213: 7502739921890840794
-    second: anim_caballero_color_8
+      213: 5967487404079794219
+    second: anim_caballero_BN_8
   - first:
-      213: -2735753035710349170
-    second: anim_caballero_color_9
+      213: 3327928218044216121
+    second: anim_caballero_BN_9
   - first:
-      213: -1728591844022805519
-    second: anim_caballero_color_10
+      213: -2675077749604732158
+    second: anim_caballero_BN_10
   - first:
-      213: 7530802923406715927
-    second: anim_caballero_color_11
+      213: 3221386085928629263
+    second: anim_caballero_BN_11
   - first:
-      213: -2819132769194670232
-    second: anim_caballero_color_12
+      213: -8617431549529780076
+    second: anim_caballero_BN_12
   - first:
-      213: 2397397557763420658
-    second: anim_caballero_color_13
+      213: 3501834942970937278
+    second: anim_caballero_BN_13
   - first:
-      213: -3660813446054897738
-    second: anim_caballero_color_14
+      213: 4281966760049207754
+    second: anim_caballero_BN_15
   - first:
-      213: 8484755910019142467
-    second: anim_caballero_color_15
+      213: 2865269040502661531
+    second: anim_caballero_B_0
+  - first:
+      213: 7825216924584620808
+    second: anim_caballero_B_1
+  - first:
+      213: 7509379819921225331
+    second: anim_caballero_B_2
+  - first:
+      213: 5558131886190104994
+    second: anim_caballero_B_3
+  - first:
+      213: -4435806520860409286
+    second: anim_caballero_B_4
+  - first:
+      213: 6617437266933271157
+    second: anim_caballero_B_5
+  - first:
+      213: 1047510137243592188
+    second: anim_caballero_B_6
+  - first:
+      213: 4053917273635503506
+    second: anim_caballero_B_7
+  - first:
+      213: 8792134591011775738
+    second: anim_caballero_B_8
+  - first:
+      213: -2820428370897673005
+    second: anim_caballero_B_9
+  - first:
+      213: 1978198201422744080
+    second: anim_caballero_B_10
+  - first:
+      213: 1941634640557754312
+    second: anim_caballero_B_11
+  - first:
+      213: -9050669118435554576
+    second: anim_caballero_B_12
+  - first:
+      213: -6288540700430321560
+    second: anim_caballero_B_13
+  - first:
+      213: -4264765451136802165
+    second: anim_caballero_B_14
+  - first:
+      213: 8292564488279459674
+    second: anim_caballero_B_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -163,7 +208,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: anim_caballero_color_0
+      name: anim_caballero_B_0
       rect:
         serializedVersion: 2
         x: 79
@@ -177,19 +222,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c631aa095b6ec1f0800000000000000
-      internalID: -1022762035191925052
+      spriteID: b91e511f20b73c720800000000000000
+      internalID: 2865269040502661531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_1
+      name: anim_caballero_B_1
       rect:
         serializedVersion: 2
         x: 960
         y: 320
-        width: 715
+        width: 722
         height: 893
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -198,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c69ef0b2fd50b990800000000000000
-      internalID: -7372289293072558395
+      spriteID: 803bd384551c89c60800000000000000
+      internalID: 7825216924584620808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_2
+      name: anim_caballero_B_2
       rect:
         serializedVersion: 2
         x: 1713
@@ -219,14 +264,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34d0dffc8db06e3b0800000000000000
-      internalID: -5483682470446691005
+      spriteID: 37634e9e82da63860800000000000000
+      internalID: 7509379819921225331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_3
+      name: anim_caballero_B_3
       rect:
         serializedVersion: 2
         x: 2390
@@ -240,14 +285,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3acb0916c8350180800000000000000
-      internalID: -9149844644458411462
+      spriteID: 2a112239083722d40800000000000000
+      internalID: 5558131886190104994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_4
+      name: anim_caballero_B_4
       rect:
         serializedVersion: 2
         x: 3060
@@ -261,14 +306,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1e6a1cae49f40af0800000000000000
-      internalID: -430945548030546403
+      spriteID: a3201cf9879d072c0800000000000000
+      internalID: -4435806520860409286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_5
+      name: anim_caballero_B_5
       rect:
         serializedVersion: 2
         x: 4046
@@ -282,14 +327,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9255a196e7a3dee30800000000000000
-      internalID: 4534344714435581225
+      spriteID: 57a4df2322cd5db50800000000000000
+      internalID: 6617437266933271157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_6
+      name: anim_caballero_B_6
       rect:
         serializedVersion: 2
         x: 5499
@@ -303,14 +348,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6400b6fa678a5c80800000000000000
-      internalID: -8333199267020667798
+      spriteID: cf5660d7be0898e00800000000000000
+      internalID: 1047510137243592188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_7
+      name: anim_caballero_B_7
       rect:
         serializedVersion: 2
         x: 6869
@@ -324,14 +369,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90e4a825bd094d180800000000000000
-      internalID: -9091482476097155575
+      spriteID: 29d3dd32848624830800000000000000
+      internalID: 4053917273635503506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_8
+      name: anim_caballero_B_8
       rect:
         serializedVersion: 2
         x: 8051
@@ -345,14 +390,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad0127e25361f1860800000000000000
-      internalID: 7502739921890840794
+      spriteID: af46eaae3dfe30a70800000000000000
+      internalID: 8792134591011775738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_9
+      name: anim_caballero_B_9
       rect:
         serializedVersion: 2
         x: 9323
@@ -366,14 +411,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e80c941db17a80ad0800000000000000
-      internalID: -2735753035710349170
+      spriteID: 3d4e5360753dbd8d0800000000000000
+      internalID: -2820428370897673005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_10
+      name: anim_caballero_B_10
       rect:
         serializedVersion: 2
         x: 10968
@@ -387,14 +432,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fb126750eec208e0800000000000000
-      internalID: -1728591844022805519
+      spriteID: 01a8e1388c8f37b10800000000000000
+      internalID: 1978198201422744080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_11
+      name: anim_caballero_B_11
       rect:
         serializedVersion: 2
         x: 12161
@@ -408,19 +453,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71c6123eb59c28860800000000000000
-      internalID: 7530802923406715927
+      spriteID: 8c7c90a1b6212fa10800000000000000
+      internalID: 1941634640557754312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_12
+      name: anim_caballero_B_12
       rect:
         serializedVersion: 2
         x: 12838
         y: 289
-        width: 587
+        width: 594
         height: 857
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -429,14 +474,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8670d7dcead60e8d0800000000000000
-      internalID: -2819132769194670232
+      spriteID: 0fa0d08a360956280800000000000000
+      internalID: -9050669118435554576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_13
+      name: anim_caballero_B_13
       rect:
         serializedVersion: 2
         x: 13515
@@ -450,14 +495,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f1b0e77064454120800000000000000
-      internalID: 2397397557763420658
+      spriteID: 868b3431d8d9ab8a0800000000000000
+      internalID: -6288540700430321560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_14
+      name: anim_caballero_B_14
       rect:
         serializedVersion: 2
         x: 14293
@@ -471,14 +516,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b79cee019d223dc0800000000000000
-      internalID: -3660813446054897738
+      spriteID: b82e1aafa6280d4c0800000000000000
+      internalID: -4264765451136802165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_caballero_color_15
+      name: anim_caballero_B_15
       rect:
         serializedVersion: 2
         x: 14464
@@ -492,8 +537,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3435696cb88efb570800000000000000
-      internalID: 8484755910019142467
+      spriteID: a578ae8577b151370800000000000000
+      internalID: 8292564488279459674
       vertices: []
       indices: 
       edges: []

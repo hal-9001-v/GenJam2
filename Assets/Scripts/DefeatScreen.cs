@@ -27,7 +27,6 @@ public class DefeatScreen : MonoBehaviour
         _canvasGroup.alpha = 1;
         _canvasGroup.blocksRaycasts = true;
 
-        Debug.Log("Threre");
     }
 
     public void Hide()

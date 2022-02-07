@@ -1,7 +1,34 @@
 fileFormatVersion: 2
 guid: e54037bf2b304d548aea51aa45479ef8
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1678067731655681591
+    second: Arquera_BN_0
+  - first:
+      213: 1559626078857631496
+    second: Arquera_BN_1
+  - first:
+      213: -5194676354422802060
+    second: Arquera_BN_2
+  - first:
+      213: -7207429083708681398
+    second: Arquera_BN_3
+  - first:
+      213: 8754082307616035836
+    second: Arquera_BN_4
+  - first:
+      213: -4979910310387690258
+    second: Arquera_BN_5
+  - first:
+      213: -412484554262368210
+    second: Arquera_BN_6
+  - first:
+      213: -882063310864978875
+    second: Arquera_BN_7
+  - first:
+      213: 7147436767532643211
+    second: Arquera_BN_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -20,7 +47,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -41,7 +68,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +102,234 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Arquera_BN_0
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 208
+        width: 1241
+        height: 921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736e16e06b1b94710800000000000000
+      internalID: 1678067731655681591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arquera_BN_1
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 208
+        width: 1244
+        height: 921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8079ebcc7a7e4a510800000000000000
+      internalID: 1559626078857631496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arquera_BN_2
+      rect:
+        serializedVersion: 2
+        x: 3231
+        y: 265
+        width: 1026
+        height: 831
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479f183d06dc8e7b0800000000000000
+      internalID: -5194676354422802060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arquera_BN_3
+      rect:
+        serializedVersion: 2
+        x: 4502
+        y: 436
+        width: 707
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4399b95f611afb90800000000000000
+      internalID: -7207429083708681398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arquera_BN_4
+      rect:
+        serializedVersion: 2
+        x: 5280
+        y: 208
+        width: 949
+        height: 921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf35cf74a7fbc7970800000000000000
+      internalID: 8754082307616035836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arquera_BN_5
+      rect:
+        serializedVersion: 2
+        x: 6562
+        y: 208
+        width: 949
+        height: 921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4590815fdc3eab0800000000000000
+      internalID: -4979910310387690258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arquera_BN_6
+      rect:
+        serializedVersion: 2
+        x: 7756
+        y: 208
+        width: 945
+        height: 921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e203bdbbb7f864af0800000000000000
+      internalID: -412484554262368210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arquera_BN_7
+      rect:
+        serializedVersion: 2
+        x: 8945
+        y: 208
+        width: 950
+        height: 921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54cec76971842c3f0800000000000000
+      internalID: -882063310864978875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arquera_BN_8
+      rect:
+        serializedVersion: 2
+        x: 10173
+        y: 208
+        width: 948
+        height: 921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83795f0fdbc03360800000000000000
+      internalID: 7147436767532643211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

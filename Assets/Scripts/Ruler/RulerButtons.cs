@@ -16,6 +16,8 @@ public class RulerButtons : MonoBehaviour
     [Header("RulerComponents")]
     [SerializeField] private  Button[]  rulers;
     [SerializeField] private Sprite[] rulerSprites;
+    [SerializeField] private Sprite[] rulerImproveSprites;
+    
     [SerializeField] private  SpriteRenderer cursorSprite;  
     [SerializeField] private RulerType currentType;
 
@@ -27,9 +29,12 @@ public class RulerButtons : MonoBehaviour
     [Header("Ruler Costs")]
     public int spawnCost;
     public int improveCost;
-    public int improveTime;
+    public int improveCircles;
     public int improveHealth;
     public int improveDamage;
+    
+    public Sprite improveSprite;
+
     private int _id;
     private void Awake() {
         _id = 0;
@@ -65,13 +70,18 @@ public class RulerButtons : MonoBehaviour
         
         _id++;
         
+
         if(rulerType == RulerType.Type3) {
-            Instantiate(arrowPrefab, pos, rotation);
+            var newRot = new Vector3(rotation.eulerAngles.x, rotation.eulerAngles.y, rotation.eulerAngles.z+109);
+            Instantiate(arrowPrefab, pos, Quaternion.Euler(newRot));
             return;
         }
 
         
+        
     }
+
+    
     
   
     public Sprite GetSpritedRuler(RulerType rulerType){
@@ -94,16 +104,18 @@ public class RulerButtons : MonoBehaviour
             case 0:
             spawnCost = 10;
             improveCost = 20;
-            improveTime = 2;
+            improveCircles = 2;
             improveHealth = 3;
+            improveSprite = rulerImproveSprites[0];
             
             break;
 
             case 1:
             spawnCost = 20;
             improveCost = 30;
-            improveTime = 3;
+            improveCircles = 3;
             improveHealth = 3;
+            improveSprite = rulerImproveSprites[1];
             break;
 
             case 2:

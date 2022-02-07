@@ -11,9 +11,11 @@ public class ClickSpawner : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRendererPreview;
     [SerializeField] Sprite rotationSprite;
     [SerializeField] Sprite improvingSprite;
+    [SerializeField] Sprite improvePaintSpawnable;
+
     SpriteRenderer cursorSpriteRenderer;
     RaycastHit2D hit;
-    float improvedElapsedTime;
+    float improvedElapsedCircles;
     string previousImprovingRulerName;
     private void Awake()
     {
@@ -96,28 +98,32 @@ public class ClickSpawner : MonoBehaviour
         if (baseDefense == null)
         {
             cursorSpriteRenderer.sprite = rulerType.GetSpritedRuler(rulerType.GetRulerType());
-            improvedElapsedTime = 0f;
+            improvedElapsedCircles = 0;
             return;
         }
         string hitname = baseDefense.name;
+        //spawn circles
+
+        //if releases 
         if (!previousImprovingRulerName.Equals(hitname))
         {
             cursorSpriteRenderer.sprite = rulerType.GetSpritedRuler(rulerType.GetRulerType());
-            
-            improvedElapsedTime = 0f;
+            //despawn circles
+            improvedElapsedCircles = 0f;
         }
         else
         {
             cursorSpriteRenderer.sprite = improvingSprite;
-            improvedElapsedTime += Time.deltaTime;
-            SpriteRenderer sr = baseDefense.GetComponentInChildren<SpriteRenderer>();
-            if (improvedElapsedTime > rulerType.improveTime)
+            //circles++
+            if (improvedElapsedCircles > rulerType.improveCircles)
             {
+                SpriteRenderer sr = baseDefense.GetComponentInChildren<SpriteRenderer>();
                 ImproveRuler(hit.collider.gameObject, sr, baseDefense);
-                improvedElapsedTime = 0f;
+                improvedElapsedCircles = 0f;
 
             }
-        }
+
+        }   
 
         previousImprovingRulerName = hitname;
 
@@ -129,7 +135,7 @@ public class ClickSpawner : MonoBehaviour
     {
 
         Debug.Log("Improved" + rulerGO.name);
-        sr.color = new Vector4(0, 0, 0, 1);
+        sr.sprite = rulerType.improveSprite;
         ink.SubInk(rulerType.improveCost);
         bd.ImproveHealth(rulerType.improveHealth);
         //cambiar el prefab a otro que mole más
@@ -177,11 +183,11 @@ public class ClickSpawner : MonoBehaviour
         return spriteRendererPreview.gameObject.transform.rotation;
 
     }
-
+    
     private void OnRelease()
     {
 
-        improvedElapsedTime = 0f;
+        improvedElapsedCircles = 0f;
         //hide preview, then change cursor sprite to current type (from rotating sprite)
         spriteRendererPreview.enabled = false;
 

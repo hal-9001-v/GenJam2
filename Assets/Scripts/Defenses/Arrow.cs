@@ -8,7 +8,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] [Range(1, 20)] private float _speed;
+    [SerializeField] [Range(1, 50)] private float _speed;
     private Rigidbody2D _rb2D;
 
     private void Awake()

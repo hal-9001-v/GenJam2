@@ -377,9 +377,12 @@ MonoBehaviour:
   - {fileID: 6722465878500698410}
   - {fileID: 6722465878548684209}
   rulerSprites:
-  - {fileID: 21300000, guid: f2cdfcac78c38ce40a100ae734ffe3a1, type: 3}
-  - {fileID: 21300000, guid: 713f7e0c4ec95cd44a5ec502058ec8ce, type: 3}
-  - {fileID: 21300000, guid: eec500c5d3cb62d448227ea9c4fae3ca, type: 3}
+  - {fileID: 21300000, guid: 9793e2606d6e23a4e843aa93f0740f5b, type: 3}
+  - {fileID: 2865269040502661531, guid: 81d5cf2c6f3671f4bb0fa0758121545b, type: 3}
+  - {fileID: -1830012652474528996, guid: 1b7c9980d93adf44e856ba123f43859a, type: 3}
+  rulerImproveSprites:
+  - {fileID: 21300000, guid: 524a402220608a440b51ab26c848694a, type: 3}
+  - {fileID: -1022762035191925052, guid: 2f4cd9b1199a5eb40b45259500cfd8dd, type: 3}
   cursorSprite: {fileID: 0}
   currentType: 0
   rulerSpawnables:
@@ -392,6 +395,7 @@ MonoBehaviour:
   improveTime: 0
   improveHealth: 0
   improveDamage: 0
+  improveSprite: {fileID: 0}
 --- !u!1 &6722465878312773973
 GameObject:
   m_ObjectHideFlags: 0
