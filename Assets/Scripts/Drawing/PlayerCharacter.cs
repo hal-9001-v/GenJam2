@@ -34,6 +34,7 @@ public class PlayerCharacter : MonoBehaviour
 
     void Hurt()
     {
+        StartCoroutine(Shake.DOShake(.20f, .5f,FindObjectOfType<Camera>().transform));  
         _pulsator.HurtAnimation();
     }
 

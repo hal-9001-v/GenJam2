@@ -6,7 +6,7 @@ public class DrawingAreaRenamer : MonoBehaviour
 {
     [SerializeField] GameObject myParent;
 
-    private void Update() {
+    private void Start() {
         gameObject.name = myParent.name;
     }
 }

@@ -37,7 +37,7 @@ public class Hurter : MonoBehaviour
             }
         }
     }
-
+    
     [Serializable]
     class WeightedTarget
     {

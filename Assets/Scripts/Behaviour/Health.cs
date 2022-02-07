@@ -18,6 +18,8 @@ public class Health : MonoBehaviour
     /// </summary>
     public Action hurtAction;
 
+    
+
     /// <summary>
     /// This action is called when dead
     /// </summary>
@@ -29,7 +31,9 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         Restore();
+     
     }
+
 
     /// <summary>
     /// Hurt one point
@@ -38,13 +42,13 @@ public class Health : MonoBehaviour
     {
         Hurt(1);
     }
-    
+
     public void Hurt(int damage)
     {
         //Is it already dead?
         if (currentHealthPoints <= 0) return;
 
-
+            
         currentHealthPoints -= damage;
 
         if (currentHealthPoints <= 0)

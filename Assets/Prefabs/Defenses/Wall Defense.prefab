@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3082388880513565743}
   - component: {fileID: 5004349506395447351}
   - component: {fileID: 2855790140765368682}
+  - component: {fileID: 7717859227066125366}
   m_Layer: 0
   m_Name: DrawingArea
   m_TagString: WallDefense
@@ -93,6 +94,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &7717859227066125366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5185624447765104763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac7825d4a4a6c64b880b4130172dfb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linePrefab: {fileID: 8619511188706494699, guid: 94f070ec81dee254b8de41a7ac9f3be1, type: 3}
 --- !u!1 &6275474046298306648
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +123,7 @@ GameObject:
   - component: {fileID: 6408203304473008982}
   - component: {fileID: 2351047686699607783}
   - component: {fileID: 8733445143426971728}
+  - component: {fileID: 8066006855471723024}
   m_Layer: 0
   m_Name: Wall Defense
   m_TagString: WallDefense
@@ -368,6 +383,19 @@ PolygonCollider2D:
       - {x: -0.86999995, y: -0.31499997}
       - {x: -0.86999995, y: -0.074999996}
       - {x: -0.86999995, y: -0.31499997}
+--- !u!114 &8066006855471723024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6275474046298306648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719f17f86e50c594a87ce0d1de8eb577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linePrefab: {fileID: 8619511188706494699, guid: 94f070ec81dee254b8de41a7ac9f3be1, type: 3}
 --- !u!1001 &8158258190368832409
 PrefabInstance:
   m_ObjectHideFlags: 0

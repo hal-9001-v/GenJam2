@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class CamShake 
+public static class Shake 
 {
-    public  static IEnumerator Shake(float duration, float magnitude, Transform transform){
+    public  static IEnumerator DOShake(float duration, float magnitude, Transform transform){
 
         Vector3 originalPos = transform.localPosition;
         float elapsed = 0.0f;

@@ -38,7 +38,7 @@ public class Pulsator : MonoBehaviour
 
     public void HurtAnimation()
     {
-        StartCoroutine(CamShake.Shake(.15f, .4f, FindObjectOfType<Camera>().transform));
+        
 
         DOTween.PauseAll();
         transform.DOScale(hurtScale * _startingScale, hurtDuration).SetLoops(2, LoopType.Yoyo).SetId("CenterHurt");

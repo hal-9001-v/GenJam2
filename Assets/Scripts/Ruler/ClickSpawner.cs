@@ -60,6 +60,8 @@ public class ClickSpawner : MonoBehaviour
         hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, Mathf.Infinity);
         if (hit.collider != null)
         {
+            Debug.Log("Holding mouse on: " + hit.collider.name);
+
             //If hit defense or drawing area Improve them, dont build 
             RulerType type = rulerType.GetRulerType();
             switch (hit.collider.tag)

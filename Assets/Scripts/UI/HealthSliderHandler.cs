@@ -15,7 +15,7 @@ public class HealthSliderHandler : MonoBehaviour
         {
             _health.hurtAction += () =>
             {
-                UpdateBar(_health.currentHealthPoints / _health.maxHealthPoins);
+                UpdateBar((float)_health.currentHealthPoints /(float) _health.maxHealthPoins);
             };
 
             _health.deadAction += () =>
@@ -23,19 +23,20 @@ public class HealthSliderHandler : MonoBehaviour
                 UpdateBar(0);
             };
         }
-    }
+    }   
+
 
     private void Start()
     {
         if (_health)
         {
-            UpdateBar(_health.maxHealthPoins / _health.currentHealthPoints);
+            UpdateBar((float)_health.maxHealthPoins /(float) _health.currentHealthPoints);
         }
     }
 
 
     public void UpdateBar(float fillAmount)
     {
-        _slider.value = fillAmount;
+        _slider.value = fillAmount*100;
     }
 }

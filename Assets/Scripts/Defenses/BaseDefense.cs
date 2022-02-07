@@ -9,7 +9,7 @@ using DG.Tweening;
 [RequireComponent(typeof(SpanCoutdown))]
 public abstract class BaseDefense : MonoBehaviour
 {
-    
+
     protected Health _health;
     protected SpanCoutdown _spanCountdown;
 
@@ -19,11 +19,17 @@ public abstract class BaseDefense : MonoBehaviour
         _spanCountdown = GetComponent<SpanCoutdown>();
 
         _health.deadAction += Die;
+        _health.hurtAction += Hurt;
         _spanCountdown.endOfCountdown += Die;
+
     }
 
     protected abstract void Die();
+    
 
+    void Hurt(){
+        StartCoroutine(Shake.DOShake(.15f, .3f,FindObjectOfType<Camera>().transform));  
+    }
     public void ImproveHealth(int newMaxHealth)
     {
         var health = GetComponent<Health>();
