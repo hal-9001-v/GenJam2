@@ -21,15 +21,12 @@ public class PlayerCharacter : MonoBehaviour
 
         _endgame = FindObjectOfType<EndGame>();
 
-        _health.deadAction += Die;
-        _health.hurtAction += Hurt;
-
         _endgame.retryCallback += _health.Restore;
     }
 
     void Die()
     {
-        Debug.Log("La palmas");
+        _pulsator.HurtAnimation();
     }
 
     void Hurt()
