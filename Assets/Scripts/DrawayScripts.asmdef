@@ -1,0 +1,17 @@
+{
+    "name": "ScriptsMain",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d9563d29d3d30fd4abf3a5295ef9b96d",
+        "GUID:97b750903e78e3a418ea0b719bf43d7e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

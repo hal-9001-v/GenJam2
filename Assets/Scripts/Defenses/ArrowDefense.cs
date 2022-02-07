@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD:Assets/Scripts/Defenses/ArrowDefense.cs
 public class ArrowDefense : BaseDefense
 {   
    private void Awake() {
@@ -13,13 +14,23 @@ public class ArrowDefense : BaseDefense
     private void Start() {
          StartCoroutine(DestroyOnElapsed());
     }  
+=======
+>>>>>>> PuttingThingsTogether:Assets/Scripts/Defenses/TestDefense.cs
 
-     override protected void Die(){
+public class TestDefense : BaseDefense
+{
 
-        Destroy(father);
+    private void Awake()
+    {
+        var span = GetComponent<SpanCoutdown>();
 
+        span.endOfCountdown += () =>
+        {
+            Die();
+        };
     }
 
+<<<<<<< HEAD:Assets/Scripts/Defenses/ArrowDefense.cs
     private void OnTriggerEnter2D(Collider2D other) {
         
    
@@ -38,5 +49,11 @@ public class ArrowDefense : BaseDefense
            break;
        }
 
+=======
+    protected override void Die()
+    {
+        Destroy(gameObject);
+>>>>>>> PuttingThingsTogether:Assets/Scripts/Defenses/TestDefense.cs
     }
+
 }

@@ -5,8 +5,11 @@ using System;
 using DG.Tweening;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(SpanCoutdown))]
 public abstract class BaseDefense : MonoBehaviour
 {
+<<<<<<< HEAD
     public float lifespan;
     public int totalHealth;
     public int health;
@@ -31,5 +34,7 @@ public abstract class BaseDefense : MonoBehaviour
 
     }
 
+=======
+>>>>>>> PuttingThingsTogether
     protected abstract void Die();
 }
