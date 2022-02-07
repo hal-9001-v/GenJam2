@@ -6,13 +6,11 @@ public class StraightEnemy : Enemy
 {
 
     Vector3 desiredDirection;
-    float elapsedTime;
-
+    
     private void Awake()
     {
         Initialize();
 
-        elapsedTime = 0;
     }
 
     private void Start()

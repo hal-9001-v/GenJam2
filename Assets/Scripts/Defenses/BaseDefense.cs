@@ -9,6 +9,7 @@ using DG.Tweening;
 [RequireComponent(typeof(SpanCoutdown))]
 public abstract class BaseDefense : MonoBehaviour
 {
+    
     protected Health _health;
     protected SpanCoutdown _spanCountdown;
 

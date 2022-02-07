@@ -53,7 +53,7 @@ public class RulerButtons : MonoBehaviour
         });
 
     }
-
+    
     private void Start() {
         SetRulerType((int)RulerType.Type1);
     }
@@ -62,6 +62,7 @@ public class RulerButtons : MonoBehaviour
         
         GameObject instance = Instantiate(rulerSpawnables[(int)rulerType], pos, rotation);
         instance.name =  _id.ToString();
+        
         _id++;
         
         if(rulerType == RulerType.Type3) {

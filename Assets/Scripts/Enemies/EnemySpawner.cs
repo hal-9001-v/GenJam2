@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Spawn Prefabs")]
-    [SerializeField] private GameObject spawnablePrefab;
+    [SerializeField] private GameObject[] spawnablePrefab;
 
     [Header("Spawn Data")]
     [SerializeField] public Vector2 spawnCenter;
@@ -70,7 +70,7 @@ public class EnemySpawner : MonoBehaviour
     {
         float angle = GetSpawnAngle();
         float radius = GetSpawnRadius();
-        Instantiate(spawnablePrefab, GetSpawnPos(angle, radius), this.transform.rotation);
+        Instantiate(spawnablePrefab[Random.Range(0,3)], GetSpawnPos(angle, radius), this.transform.rotation);
     }
 
     private Vector2 GetSpawnPos(float angle, float radius)
@@ -83,7 +83,7 @@ public class EnemySpawner : MonoBehaviour
         return spawnPos;
 
     }
-
+    
     private float GetSpawnAngle()
     {
 

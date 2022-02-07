@@ -10,11 +10,12 @@ public class HealthSliderHandler : MonoBehaviour
 
     private void Awake()
     {
+        _slider = GetComponentInChildren<Slider>();
         if (_health)
         {
             _health.hurtAction += () =>
             {
-                UpdateBar(_health.maxHealthPoins / _health.currentHealthPoints);
+                UpdateBar(_health.currentHealthPoints / _health.maxHealthPoins);
             };
 
             _health.deadAction += () =>

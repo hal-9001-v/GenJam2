@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using DG.Tweening;
 public class ClickSpawner : MonoBehaviour
 {
 
@@ -96,28 +95,20 @@ public class ClickSpawner : MonoBehaviour
         {
             cursorSpriteRenderer.sprite = rulerType.GetSpritedRuler(rulerType.GetRulerType());
             improvedElapsedTime = 0f;
-            DOTween.Restart("ImprovingAnim");
-            DOTween.Pause("ImprovingAnim");
-            DOTween.Kill("ImprovingAnim");
             return;
         }
         string hitname = baseDefense.name;
         if (!previousImprovingRulerName.Equals(hitname))
         {
             cursorSpriteRenderer.sprite = rulerType.GetSpritedRuler(rulerType.GetRulerType());
-
+            
             improvedElapsedTime = 0f;
-            DOTween.Restart("ImprovingAnim");
-            DOTween.Pause("ImprovingAnim");
-            DOTween.Kill("ImprovingAnim");
-
         }
         else
         {
             cursorSpriteRenderer.sprite = improvingSprite;
             improvedElapsedTime += Time.deltaTime;
             SpriteRenderer sr = baseDefense.GetComponentInChildren<SpriteRenderer>();
-            StartImprovingAnimation(sr);
             if (improvedElapsedTime > rulerType.improveTime)
             {
                 ImproveRuler(hit.collider.gameObject, sr, baseDefense);
@@ -130,13 +121,7 @@ public class ClickSpawner : MonoBehaviour
 
     }
 
-    private void StartImprovingAnimation(SpriteRenderer sr)
-    {
-
-        if (sr != null) sr.DOColor(new Vector4(0, 0, 0, 1), rulerType.improveTime - 0.5f).SetId("ImprovingAnim");
-
-
-    }
+  
 
     private void ImproveRuler(GameObject rulerGO, SpriteRenderer sr, BaseDefense bd)
     {
@@ -193,15 +178,15 @@ public class ClickSpawner : MonoBehaviour
 
     private void OnRelease()
     {
-        DOTween.Restart("ImprovingAnim");
-        DOTween.Pause("ImprovingAnim");
-        DOTween.Kill("ImprovingAnim");
+
         improvedElapsedTime = 0f;
         //hide preview, then change cursor sprite to current type (from rotating sprite)
         spriteRendererPreview.enabled = false;
+
         cursorSpriteRenderer.sprite = rulerType.GetSpritedRuler(rulerType.GetRulerType());
         //Debug.Log(hit.collider.tag);
 
+        hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, Mathf.Infinity);
         //if drawing of background -> spawn 
         if (hit.collider != null)
         {

@@ -38,7 +38,7 @@ public class Health : MonoBehaviour
     {
         Hurt(1);
     }
-
+    
     public void Hurt(int damage)
     {
         //Is it already dead?
