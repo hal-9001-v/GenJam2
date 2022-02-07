@@ -10,11 +10,6 @@ public class SoldierDefense : BaseDefense
         Initialize();
     }
 
-    private void Start()
-    {
-        // StartCoroutine(DestroyOnElapsed());
-    }
-
     override protected void Die()
     {
         Destroy(gameObject);

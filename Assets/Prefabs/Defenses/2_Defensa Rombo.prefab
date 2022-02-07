@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f3489edd2f0214597284c5101b9966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _time: 0
+  _time: 1.62
 --- !u!212 &254555361588590259
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1515131362657065477, guid: b8d5334b8b8521e4b870181e8c343c9c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 252.5
+      value: 251.67
       objectReference: {fileID: 0}
     - target: {fileID: 1515131362657065477, guid: b8d5334b8b8521e4b870181e8c343c9c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

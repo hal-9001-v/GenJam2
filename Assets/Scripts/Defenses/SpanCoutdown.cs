@@ -12,7 +12,7 @@ public class SpanCoutdown : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(LifeCountDown());
+        StartCoroutine(LifeCountDown());
     }
 
     IEnumerator LifeCountDown()
