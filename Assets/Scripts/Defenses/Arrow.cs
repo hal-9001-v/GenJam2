@@ -2,38 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Hurter))]
+[RequireComponent(typeof(SpanCoutdown))]
 public class Arrow : MonoBehaviour
 {
-   private Rigidbody2D _rb2D;
-    private float _speed;
-    
-   private void Awake() {
-       _rb2D = GetComponent<Rigidbody2D>();
-        _speed = 30000;
-   }
+    [Header("Settings")]
+    [SerializeField] [Range(1, 20)] private float _speed;
+    private Rigidbody2D _rb2D;
 
-   private void Update() {
-        float step = _speed * Time.deltaTime;
-        var desiredVelocity = (Vector2) transform.up *step - _rb2D.velocity;
-        _rb2D.AddForce(desiredVelocity, ForceMode2D.Impulse); 
-        
-      }
+    private void Awake()
+    {
+        _rb2D = GetComponent<Rigidbody2D>();
 
-    /*
-   private void OnTriggerEnter2D(Collider2D other) {
-       
-       switch(other.tag){
-           
-           case "EnemyType1": 
-           case "EnemyType2": 
-                other.gameObject.GetComponent<Enemy>().Hurt();
-            break;
-           case "EnemyType3": 
-                other.gameObject.GetComponent<Enemy>().Hurt();
-                other.gameObject.GetComponent<Enemy>().Hurt();
-           break;
+        var spanCountdown = GetComponent<SpanCoutdown>();
+        spanCountdown.endOfCountdown += Die;
+    }
 
-       }
-   }
-    */
+    private void Update()
+    {
+        var desiredVelocity = (Vector2)transform.up * _speed - _rb2D.velocity;
+        _rb2D.AddForce(desiredVelocity, ForceMode2D.Impulse);
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemy : Enemy
+public class SpinEnemy : Enemy
 {
     [Header("Settings")]
     [SerializeField] private float oscillation;
@@ -10,6 +10,8 @@ public class BasicEnemy : Enemy
 
     Vector3 desiredDirection;
     float elapsedTime;
+
+    PlayerCharacter _target;
 
     private void Awake()
     {
@@ -20,12 +22,8 @@ public class BasicEnemy : Enemy
 
     private void Start()
     {
+        _target = FindObjectOfType<PlayerCharacter>();
 
-        var target = FindObjectOfType<PlayerCharacter>();
-        if (target)
-        {
-            desiredDirection = (target.transform.position - transform.position).normalized;
-        }
     }
     private void FixedUpdate()
     {
@@ -35,6 +33,9 @@ public class BasicEnemy : Enemy
     override public void EnemyMovement()
     {
 
+        desiredDirection = _target.transform.position - transform.position;
+        desiredDirection.Normalize();
+
         elapsedTime += Time.deltaTime;
 
         var cross = Vector3.Cross(desiredDirection, Vector3.forward) * oscillation;
@@ -42,6 +43,8 @@ public class BasicEnemy : Enemy
         var desiredVelocity = (Vector2)desiredDirection * speed - rb2D.velocity;
 
         desiredVelocity += (Vector2)cross * Mathf.Sin(elapsedTime * period);
+
+
 
         rb2D.AddForce(desiredVelocity, ForceMode2D.Impulse);
     }

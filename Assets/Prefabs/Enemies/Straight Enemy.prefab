@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 4325446466531581027}
   - component: {fileID: 3111841769226739321}
   - component: {fileID: 1724100825180347466}
-  - component: {fileID: 717865926714785872}
+  - component: {fileID: 1517731965034936522}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: Straight Enemy
   m_TagString: EnemyType2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,9 +168,9 @@ MonoBehaviour:
   _targets:
   - target: 0
     damageScale: 1
-  _damage: 0
+  _damage: 1
   _spriteDestroyer: {fileID: 0}
---- !u!114 &717865926714785872
+--- !u!114 &1517731965034936522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,12 +179,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2746902307759618623}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd6d4e694495a794fa878ebf23334a32, type: 3}
+  m_Script: {fileID: 11500000, guid: b7936994d00e3b245bfec7df8fb8472f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  oscillation: 10
-  period: 1
+  speed: 10
 --- !u!1001 &8687161230009327977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -276,6 +274,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2999000147149553155, guid: b8d5334b8b8521e4b870181e8c343c9c, type: 3}
+      propertyPath: _health
+      value: 
+      objectReference: {fileID: 3111841769226739321}
     - target: {fileID: 4075691753468916531, guid: b8d5334b8b8521e4b870181e8c343c9c, type: 3}
       propertyPath: m_Name
       value: HealthBar

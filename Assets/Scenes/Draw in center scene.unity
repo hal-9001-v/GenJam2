@@ -1183,7 +1183,12 @@ MonoBehaviour:
   - {fileID: 2751189463089440487, guid: ef68461bbb5ebf041a3841955628ce2c, type: 3}
   - {fileID: 6275474046298306648, guid: 746c923d740ccd24c95494bf9c93fc80, type: 3}
   - {fileID: 7710072878737659851, guid: 2d1e69489aa19da4a9488bd0d091363a, type: 3}
+  arrowPrefab: {fileID: 0}
   spawnCost: 10
+  improveCost: 0
+  improveTime: 0
+  improveHealth: 0
+  improveDamage: 0
 --- !u!1 &785847458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,7 +1871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcebfff9cc47b841b29abc9d8b64fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnablePrefab: {fileID: 2746902307759618623, guid: 9fede3d32feaa0547951deabe305f4cb, type: 3}
+  spawnablePrefab: {fileID: 2746902307759618623, guid: 9e4ae00575dfd0349b233d82e1d98d3c, type: 3}
   spawnCenter: {x: 0, y: 0}
   spawnRadius: 1
   spawnAngle: 30
@@ -2294,7 +2299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0175e4fc156d3be42aa0ec857024733e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealthPoins: 1
+  _maxHealthPoins: 5
   _healthTag: 0
 --- !u!4 &1557395136
 Transform:
@@ -2850,6 +2855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRendererPreview: {fileID: 317911233}
   rotationSprite: {fileID: 21300000, guid: fedce91778b4525468d8644261975191, type: 3}
+  improvingSprite: {fileID: 0}
 --- !u!1 &2132091522
 GameObject:
   m_ObjectHideFlags: 0

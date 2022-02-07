@@ -25,7 +25,6 @@ public abstract class Enemy : MonoBehaviour
         health.hurtAction += GotHurt;
 
         hurter.hitSuccessAction += (target, collider) => { Die(); };
-
     }
 
     public abstract void Die();
