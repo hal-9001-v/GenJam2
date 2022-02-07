@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6408203304473008986}
   - component: {fileID: 6408203304473008983}
   - component: {fileID: 6408203304473008982}
-  - component: {fileID: 6408203304473008985}
+  - component: {fileID: 2351047686699607783}
   m_Layer: 0
   m_Name: Wall Defense
   m_TagString: Untagged
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _time: 5
---- !u!114 &6408203304473008985
+--- !u!114 &2351047686699607783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -453,6 +453,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6275474046298306648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af3e0280d4289c24f8c6a728a4064edf, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a2ec409502cf19498b03f6e5af1098d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
