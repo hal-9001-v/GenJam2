@@ -4999,6 +4999,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Devil
       objectReference: {fileID: 0}
+    - target: {fileID: 7565472814073187290, guid: 8d2b7efd7da10894399e8135c1bf4400, type: 3}
+      propertyPath: m_Color.b
+      value: 0.41509432
+      objectReference: {fileID: 0}
+    - target: {fileID: 7565472814073187290, guid: 8d2b7efd7da10894399e8135c1bf4400, type: 3}
+      propertyPath: m_Color.g
+      value: 0.0019579967
+      objectReference: {fileID: 0}
+    - target: {fileID: 7565472814073187290, guid: 8d2b7efd7da10894399e8135c1bf4400, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3456369
+      objectReference: {fileID: 0}
     - target: {fileID: 9020861256953057132, guid: 8d2b7efd7da10894399e8135c1bf4400, type: 3}
       propertyPath: m_RootOrder
       value: 1

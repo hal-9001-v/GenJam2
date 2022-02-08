@@ -9,19 +9,19 @@ public class DevilFlipper : MonoBehaviour
 
     private void Awake()
     {
-        originalX = transform.localScale.x;
+        originalX = devil.transform.localScale.x;
     }
 
     public void RightFlip()
     {
-        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        devil.transform.localScale = new Vector3(originalX, devil.localScale.y, devil.localScale.z);
 
     }
 
     public void InverseFlip()
     {
 
-        transform.localScale = new Vector3(-originalX, transform.localScale.y, transform.localScale.z);
+        devil.transform.localScale = new Vector3(-originalX, devil.localScale.y, devil.localScale.z);
     }
 
 
