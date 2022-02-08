@@ -93,6 +93,7 @@ public class SoldierDefense : BaseDefense
                 {
                     _hitElapsedTime = 0;
                     _animator.SetBool(AnimatorHitBool, true);
+                    FindObjectOfType<AudioManager>().Play("SwordSwing");
                     _attackHitbox.enabled = true;
                     draw = true;
                     return true;
