@@ -73,7 +73,7 @@ public class RulerButtons : MonoBehaviour
 
         if(rulerType == RulerType.Type3) {
             var newRot = new Vector3(rotation.eulerAngles.x, rotation.eulerAngles.y, rotation.eulerAngles.z+109);
-            Instantiate(arrowPrefab, pos, Quaternion.Euler(newRot));
+            StartCoroutine(SpawnArrow( pos, newRot));
             return;
         }
 
@@ -82,7 +82,12 @@ public class RulerButtons : MonoBehaviour
     }
 
     
-    
+    IEnumerator SpawnArrow(Vector3 pos,Vector3 newRot){
+
+        yield return new WaitForSeconds(0.125f*3f);
+        Instantiate(arrowPrefab, pos, Quaternion.Euler(newRot));
+
+    }
   
     public Sprite GetSpritedRuler(RulerType rulerType){
         

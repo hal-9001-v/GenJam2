@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3082388880513565743}
   - component: {fileID: 5004349506395447351}
   - component: {fileID: 2855790140765368682}
-  - component: {fileID: 2417613492022153157}
   m_Layer: 0
   m_Name: DrawingArea
   m_TagString: WallDrawing
@@ -94,20 +93,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &2417613492022153157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5185624447765104763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac7825d4a4a6c64b880b4130172dfb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LinePrefab: {fileID: 8619511188706494699, guid: 94f070ec81dee254b8de41a7ac9f3be1, type: 3}
-  LineColor: {r: 1, g: 0.9804344, b: 0, a: 1}
 --- !u!1 &6275474046298306648
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5565851129857171837}
   - component: {fileID: 7580005638705782126}
-  - component: {fileID: 7663060610792670271}
   m_Layer: 0
   m_Name: DrawingArea
   m_TagString: SoldierDrawing
@@ -58,20 +57,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1817732, y: 1.7940946}
   m_EdgeRadius: 0
---- !u!114 &7663060610792670271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5013880784832929831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac7825d4a4a6c64b880b4130172dfb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LinePrefab: {fileID: 8619511188706494699, guid: 94f070ec81dee254b8de41a7ac9f3be1, type: 3}
-  LineColor: {r: 1, g: 0.9804344, b: 0, a: 1}
 --- !u!1 &6275474046298306648
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485314185936505898, guid: b8d5334b8b8521e4b870181e8c343c9c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -257.25
+      value: -257.19
       objectReference: {fileID: 0}
     - target: {fileID: 1515131362657065477, guid: b8d5334b8b8521e4b870181e8c343c9c, type: 3}
       propertyPath: m_Pivot.x
