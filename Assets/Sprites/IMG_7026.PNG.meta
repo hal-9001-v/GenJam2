@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 28bce87fe3082254c9f85c7963390fda
+guid: 601fd3e52711c354593ae80dbd5951d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5121939985006040530
-    second: Improve them _0
+      213: -2646445812531945441
+    second: IMG_7026_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Improve them _0
+      name: IMG_7026_0
       rect:
         serializedVersion: 2
-        x: 466
-        y: 1628
-        width: 1366
-        height: 284
+        x: 510
+        y: 776
+        width: 922
+        height: 919
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d597277749c41740800000000000000
-      internalID: 5121939985006040530
+      spriteID: f10a6b21e8fe54bd0800000000000000
+      internalID: -2646445812531945441
       vertices: []
       indices: 
       edges: []

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 28bce87fe3082254c9f85c7963390fda
+guid: c3fc08a8c819e074fafe8f4e91d85da3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5121939985006040530
-    second: Improve them _0
+      213: 1821591451650010289
+    second: Derr esp _0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Improve them _0
+      name: Derr esp _0
       rect:
         serializedVersion: 2
-        x: 466
-        y: 1628
-        width: 1366
-        height: 284
+        x: 578
+        y: 1058
+        width: 1056
+        height: 559
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d597277749c41740800000000000000
-      internalID: 5121939985006040530
+      spriteID: 1bcac7926c7974910800000000000000
+      internalID: 1821591451650010289
       vertices: []
       indices: 
       edges: []

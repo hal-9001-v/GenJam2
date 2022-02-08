@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 28bce87fe3082254c9f85c7963390fda
+guid: 886aa78360cce8f4986cf2da8a78b629
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5121939985006040530
-    second: Improve them _0
+      213: -7536552348962050782
+    second: tuto_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Improve them _0
+      name: tuto_0
       rect:
         serializedVersion: 2
-        x: 466
-        y: 1628
-        width: 1366
-        height: 284
+        x: 608
+        y: 1532
+        width: 691
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d597277749c41740800000000000000
-      internalID: 5121939985006040530
+      spriteID: 22d2bf8a199c86790800000000000000
+      internalID: -7536552348962050782
       vertices: []
       indices: 
       edges: []

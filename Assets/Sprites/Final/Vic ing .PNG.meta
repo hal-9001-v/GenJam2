@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 28bce87fe3082254c9f85c7963390fda
+guid: c827025eca14c174393da163e51b9b42
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5121939985006040530
-    second: Improve them _0
+      213: 2462975863420602349
+    second: Vic ing _0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Improve them _0
+      name: Vic ing _0
       rect:
         serializedVersion: 2
-        x: 466
-        y: 1628
-        width: 1366
-        height: 284
+        x: 627
+        y: 1069
+        width: 958
+        height: 544
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d597277749c41740800000000000000
-      internalID: 5121939985006040530
+      spriteID: de7cb859f7f3e2220800000000000000
+      internalID: 2462975863420602349
       vertices: []
       indices: 
       edges: []
