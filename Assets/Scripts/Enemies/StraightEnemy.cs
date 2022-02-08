@@ -6,7 +6,7 @@ public class StraightEnemy : Enemy
 {
 
     Vector3 desiredDirection;
-    
+
     private void Awake()
     {
         Initialize();
@@ -20,16 +20,24 @@ public class StraightEnemy : Enemy
         if (target)
         {
             desiredDirection = (target.transform.position - transform.position).normalized;
+
+            //Flip
+            if (desiredDirection.x > 0)
+            {
+                devilFlipper.InverseFlip();
+            }
         }
     }
     private void FixedUpdate()
     {
         EnemyMovement();
-    }   
+    }
 
     override public void EnemyMovement()
     {
         var desiredVelocity = (Vector2)desiredDirection * speed - rb2D.velocity;
+
+        
 
         rb2D.AddForce(desiredVelocity, ForceMode2D.Impulse);
     }
