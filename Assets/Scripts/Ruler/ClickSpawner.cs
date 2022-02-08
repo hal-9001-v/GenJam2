@@ -221,6 +221,7 @@ public class ClickSpawner : MonoBehaviour
 
         //Rotate cursor and preview in relation to cursor
         float rotationSpeed = 2000f;
+        if(SystemInfo.deviceType == DeviceType.Handheld) rotationSpeed = 1000f; 
 
         spriteRendererPreview.gameObject.transform.Rotate(0, 0,
         Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime, Space.World);
@@ -229,12 +230,13 @@ public class ClickSpawner : MonoBehaviour
         * Time.deltaTime, Space.World);
         var mousePosition = FindObjectOfType<FollowCursor>().cursorPos;
 
-        //Other Rotation
-        /* spriteRendererPreview.gameObject.transform.rotation = Quaternion.Euler(0,0, 
+       /* //Other Rotation
+         spriteRendererPreview.gameObject.transform.rotation = Quaternion.Euler(0,0, 
          -Mathf.Atan2(mousePosition.x, mousePosition.y)*Mathf.Rad2Deg);
-         transform.rotation = Quaternion.Euler(0,0, 
-         -Mathf.Atan2(mousePosition.x, mousePosition.y)*Mathf.Rad2Deg);*/
 
+         transform.rotation = Quaternion.Euler(0,0, 
+         -Mathf.Atan2(mousePosition.x, mousePosition.y)*Mathf.Rad2Deg);
+            */  
 
 
         return spriteRendererPreview.gameObject.transform.rotation;
