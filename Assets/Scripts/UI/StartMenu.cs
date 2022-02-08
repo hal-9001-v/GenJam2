@@ -48,7 +48,7 @@ public class StartMenu : MonoBehaviour
         _mainMenu.alpha = 0;
     }
 
-    void HideSettings()
+    public void HideSettings()
     {
         _settingsMenu.transform.DOLocalMove(new Vector3(-2000,0,0), 2);
         _mainMenu.interactable = true;
@@ -56,7 +56,7 @@ public class StartMenu : MonoBehaviour
         _mainMenu.alpha = 1;
     }
    
-    void HideTutorial()
+    public void HideTutorial()
     {
         _settingsMenu.transform.DOLocalMove(new Vector3(2000,0,0), 2);
         _mainMenu.interactable = true;

@@ -52,7 +52,7 @@ public class SettingsMenuManager : MonoBehaviour
 
                 instance =this;
                 DontDestroyOnLoad(this.gameObject);
-
+                
             } else Destroy(this.gameObject);
         //Find language context
             _languageContext = FindObjectOfType<LanguageContext>();
