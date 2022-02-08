@@ -166,13 +166,13 @@ public class ClickSpawner : MonoBehaviour
         Animator anim = bd.GetAnimator();
         if(anim){
 
-            anim.SetTrigger("Improve");
+            anim.SetTrigger("IsImproved");
 
         }
         
         ink.SubInk(rulerType.improveCost);
         FindObjectOfType<AudioManager>().Play("Improve");
-        bd.ImproveHealth(rulerType.improveHealth);
+        bd.GetComponent<Health>().ModifyMaxHealth(rulerType.improveHealth) ;
         improving = false;
         //cambiar el prefab a otro que mole más
     }
@@ -268,7 +268,6 @@ public class ClickSpawner : MonoBehaviour
                 case "SoldierDefense":
                 case "SoldierDrawing":
                     return;
-                break;
 
                 case "Background":
                 case "Drawing":
