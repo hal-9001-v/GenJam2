@@ -20,11 +20,13 @@ public class ClickSpawner : MonoBehaviour
     bool building = false;
     float improvedElapsedCircles = 0;
     string previousImprovingRulerName;
+    Color prevCursorColor;
     private void Awake()
     {
         ink = FindObjectOfType<InkHandler>();
         rulerType = FindObjectOfType<RulerButtons>();
         cursorSpriteRenderer = GetComponent<SpriteRenderer>();
+        prevCursorColor = cursorSpriteRenderer.color;
 
     }
     private void Start()
@@ -115,6 +117,7 @@ public class ClickSpawner : MonoBehaviour
             else
             {
                 cursorSpriteRenderer.sprite = improvingSprite;
+                cursorSpriteRenderer.color = Color.white;
                 //circles++
                 if (improvedElapsedCircles * Time.deltaTime > rulerType.improveCircles * 100 * Time.deltaTime)
                 {
@@ -237,8 +240,8 @@ public class ClickSpawner : MonoBehaviour
 
     }
 
-    private void CancelImprove()
-    {
+    private void CancelImprove(){
+        cursorSpriteRenderer.color = prevCursorColor;
         improvedElapsedCircles = 0f;
         improving = false;
         ErasePaint();

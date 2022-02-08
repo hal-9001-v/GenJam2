@@ -13,7 +13,7 @@ public class StartMenu : MonoBehaviour
     [Header("CanvasGroups")]
     [SerializeField] CanvasGroup _mainMenu;
     [SerializeField] CanvasGroup _tutorialMenu;
-    [SerializeField] CanvasGroup _settingsMenu;
+    [SerializeField] public CanvasGroup _settingsMenu;
   
 
     LevelLoader _levelLoader;
@@ -25,10 +25,15 @@ public class StartMenu : MonoBehaviour
         _playButton.onClick.AddListener(LoadPlayLevel);
         _exitButton.onClick.AddListener(Application.Quit);
         _tutorialButton.onClick.AddListener(ShowTutorial);
-        _settingsButton.onClick.AddListener(ShowSettings);
+      
 
     }
+    private void Start()
+    {
+        _settingsMenu = FindObjectOfType<SettingsMenuManager>().ThisGroup;
 
+        _settingsButton.onClick.AddListener(ShowSettings);
+    }
     void LoadPlayLevel()
     {
         FindObjectOfType<AudioManager>().Play("MenuBop");

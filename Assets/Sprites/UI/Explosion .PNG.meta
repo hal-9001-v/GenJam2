@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3da890db7bc2f2543ba873606ea5cdb2
+guid: c708648fc0d9a5b4a845fb7c36a0b248
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7797130156662244580
-    second: "Bote vac\xEDo_0"
+      213: 3288231442825121087
+    second: Explosion _0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,22 +106,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Bote vac\xEDo_0"
+      name: Explosion _0
       rect:
         serializedVersion: 2
-        x: 770
-        y: 294
-        width: 449
-        height: 543
+        x: 676
+        y: 318
+        width: 559
+        height: 545
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e4c6570198f43c60800000000000000
-      internalID: 7797130156662244580
+      spriteID: f3d8cd0531522ad20800000000000000
+      internalID: 3288231442825121087
       vertices: []
       indices: 
       edges: []

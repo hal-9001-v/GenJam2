@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3da890db7bc2f2543ba873606ea5cdb2
+guid: a318fb9eb0bf2bc4dbc3ded8eb605f4a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7797130156662244580
-    second: "Bote vac\xEDo_0"
+      213: -526688822622613148
+    second: "Bote rect\xE1ngulo _0"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,22 +106,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Bote vac\xEDo_0"
+      name: "Bote rect\xE1ngulo _0"
       rect:
         serializedVersion: 2
-        x: 770
-        y: 294
-        width: 449
-        height: 543
+        x: 1613
+        y: 339
+        width: 248
+        height: 687
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e4c6570198f43c60800000000000000
-      internalID: 7797130156662244580
+      spriteID: 461196c6e43d0b8f0800000000000000
+      internalID: -526688822622613148
       vertices: []
       indices: 
       edges: []

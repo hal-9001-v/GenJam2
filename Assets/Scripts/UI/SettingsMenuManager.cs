@@ -33,7 +33,10 @@ public class SettingsMenuManager : MonoBehaviour
     [SerializeField] Sprite _spanishTitle;
     [SerializeField] Image _titleRenderer;
 
-    
+    [Header("Settings Menu References")]
+    public CanvasGroup ThisGroup;
+    public Button returnButton;
+
     const string MasterAudioKey = "Master";
     const string MusicAudioKey = "Music";
     const string SFXAudioKey = "SFX";
@@ -45,7 +48,7 @@ public class SettingsMenuManager : MonoBehaviour
     const float MinAudioValue = 0.001f;
 
     public static SettingsMenuManager instance;
-    private void Awake() {
+    private void Awake() {  
 
         //Singleton
             if(instance == null) {
@@ -56,21 +59,25 @@ public class SettingsMenuManager : MonoBehaviour
             } else Destroy(this.gameObject);
         //Find language context
             _languageContext = FindObjectOfType<LanguageContext>();
-
+        StartMenu s = FindObjectOfType<StartMenu>(); 
+            if(s) s._settingsMenu = this.ThisGroup;
         //Eng button
         _englishButton.onClick.AddListener(() =>
             {
                 SetLanguage(Language.English);
+                FindObjectOfType<AudioManager>().Play("MenuBop");
             });
 
         //castillian button
             _spanishButton.onClick.AddListener(() =>
             {
                 SetLanguage(Language.Spanish);
+                FindObjectOfType<AudioManager>().Play("MenuBop");
             });
-
+        ThisGroup = GetComponentInChildren<CanvasGroup>();
             SetSliders();
     }
+
 
       public void SetSliders()
     {
@@ -122,6 +129,13 @@ public class SettingsMenuManager : MonoBehaviour
         }
     }
 
- 
-    
+
+    public void HideThis()
+    {
+        PauseMenu p = FindObjectOfType<PauseMenu>();
+        StartMenu s = FindObjectOfType<StartMenu>();
+        if (p) p.HideSettings();
+        else if (s) s.HideSettings();
+    }
+
 }
