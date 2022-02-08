@@ -14,10 +14,6 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] Button MenuButton;
     [SerializeField] CanvasGroup blockingGroup;
 
-    [Header("Title Sprites")]
-    [SerializeField] Image TitleRenderer;
-    [SerializeField] Sprite EngTitle;
-    [SerializeField] Sprite SpTitle;
     private LevelLoader _levelLoader;
 
     SettingsMenuManager settings;
@@ -134,20 +130,6 @@ public class PauseMenu : MonoBehaviour
 
     }
     // Update is called once per frame
-    void Update()
-    {
-        if (FindObjectOfType<LanguageContext>().currentLanguage == Language.English)
-        {
-
-            TitleRenderer.sprite = EngTitle;
-
-
-        }
-        else {
-
-            TitleRenderer.sprite = SpTitle;    
-
-        }
-    }
+    
 }
         

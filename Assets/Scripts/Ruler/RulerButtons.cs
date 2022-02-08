@@ -124,16 +124,16 @@ public class RulerButtons : MonoBehaviour
         switch(rulerType){
 
             case 0:
-            spawnCost = 10;
-            improveCost = 20;
+            spawnCost = 25;
+            improveCost = 40;
             improveCircles = 3;
-            improveHealth = 3;
+            improveHealth = 5;
             
             break;
 
             case 1:
-            spawnCost = 20;
-            improveCost = 20;
+            spawnCost = 15;
+            improveCost = 30;
             improveCircles = 3;
             improveHealth = 3;
             break;
