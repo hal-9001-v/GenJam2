@@ -13,10 +13,13 @@ public class SpinEnemy : Enemy
 
     PlayerCharacter _target;
 
+    float originalX;
+
     private void Awake()
     {
         Initialize();
         elapsedTime = 0;
+        originalX = transform.localScale.x;
     }
 
     private void Start()
@@ -34,6 +37,16 @@ public class SpinEnemy : Enemy
 
         desiredDirection = _target.transform.position - transform.position;
         desiredDirection.Normalize();
+
+        //Flip
+        if (desiredDirection.x > 0)
+        {
+            devilFlipper.InverseFlip();
+        }
+        else
+        {
+            devilFlipper.RightFlip();
+        }
 
         elapsedTime += Time.deltaTime;
 

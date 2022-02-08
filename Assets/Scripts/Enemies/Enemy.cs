@@ -18,7 +18,7 @@ public abstract class Enemy : MonoBehaviour
     protected new ParticleSystem particleSystem;
     protected Collider2D collider;
     protected SpriteRenderer spriteRenderer;
-
+    protected DevilFlipper devilFlipper;
 
     protected void Initialize()
     {
@@ -29,6 +29,7 @@ public abstract class Enemy : MonoBehaviour
         particleSystem.Stop();
         collider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        devilFlipper = GetComponent<DevilFlipper>();
 
         health.deadAction += Die;
         health.hurtAction += GotHurt;

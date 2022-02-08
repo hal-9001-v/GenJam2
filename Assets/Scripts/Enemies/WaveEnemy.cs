@@ -25,6 +25,11 @@ public class WaveEnemy : Enemy
         if (target)
         {
             desiredDirection = (target.transform.position - transform.position).normalized;
+
+            if (desiredDirection.x > 0)
+            {
+                devilFlipper.InverseFlip();
+            }
         }
     }
     private void FixedUpdate()
