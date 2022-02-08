@@ -73,12 +73,13 @@ public class EnemySpawner : MonoBehaviour
         Instantiate(spawnablePrefab[Random.Range(0,spawnablePrefab.Length)], GetSpawnPos(angle, radius), this.transform.rotation);
     }
 
-    private Vector2 GetSpawnPos(float angle, float radius)
+    private Vector3 GetSpawnPos(float angle, float radius)
     {
 
 
-        Vector2 spawnPos = new Vector2(Mathf.Sin((angle) * Mathf.Deg2Rad) * radius,
+        Vector3 spawnPos = new Vector2(Mathf.Sin((angle) * Mathf.Deg2Rad) * radius,
             Mathf.Cos((angle) * Mathf.Deg2Rad) * radius) + (Vector2)(transform.position);
+        spawnPos.z = -5;
 
         return spawnPos;
 

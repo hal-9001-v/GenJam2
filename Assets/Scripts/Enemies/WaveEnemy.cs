@@ -48,7 +48,9 @@ public class WaveEnemy : Enemy
 
     public override void Die()
     {
-        Destroy(gameObject);
+        DeathEffect();
+
+        StartCoroutine(DeathCountDown());
     }
 
     protected override void GotHurt()

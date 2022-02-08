@@ -16,7 +16,6 @@ public class SpinEnemy : Enemy
     private void Awake()
     {
         Initialize();
-
         elapsedTime = 0;
     }
 
@@ -28,7 +27,7 @@ public class SpinEnemy : Enemy
     private void FixedUpdate()
     {
         EnemyMovement();
-    }   
+    }
 
     override public void EnemyMovement()
     {
@@ -51,7 +50,9 @@ public class SpinEnemy : Enemy
 
     public override void Die()
     {
-        Destroy(gameObject);
+        DeathEffect();
+
+        StartCoroutine(DeathCountDown());
     }
 
     protected override void GotHurt()
