@@ -1215,8 +1215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRendererPreview: {fileID: 317911233}
-  rotationSprite: {fileID: 21300000, guid: fedce91778b4525468d8644261975191, type: 3}
-  improvingSprite: {fileID: 21300000, guid: 3111f6d40a8f9cb42ae7c0bccc48a017, type: 3}
+  rotationSprite: {fileID: -9018258329786297324, guid: 402beb54bd9331948b1c88af46536605, type: 3}
+  improvingSprite: {fileID: 5945798486577512179, guid: fed74f0589ce84e4b87921b68045ad28, type: 3}
   improvePaintSpawnableWall: {fileID: 3728639063006417314, guid: c45484e787c918749956285048bb1793, type: 3}
   improvePaintSpawnableSoldier: {fileID: 3728639063006417314, guid: 108ee6eea04032641acf861fdfedd337, type: 3}
 --- !u!61 &2054442762
