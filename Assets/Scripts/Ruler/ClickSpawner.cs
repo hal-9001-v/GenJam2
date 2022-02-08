@@ -172,7 +172,7 @@ public class ClickSpawner : MonoBehaviour
         
         ink.SubInk(rulerType.improveCost);
         FindObjectOfType<AudioManager>().Play("Improve");
-        bd.ImproveHealth(rulerType.improveHealth);
+        bd.Improve();
         improving = false;
         //cambiar el prefab a otro que mole más
     }
