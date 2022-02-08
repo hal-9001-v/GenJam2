@@ -18,12 +18,15 @@ public class Health : MonoBehaviour
     /// </summary>
     public Action hurtAction;
 
-    
-
     /// <summary>
     /// This action is called when dead
     /// </summary>
     public Action deadAction;
+
+    /// <summary>
+    /// This action is called when maxHealthPoints is modified
+    /// </summary>
+    public Action modifyAction;
 
     [SerializeField] HealthTag _healthTag;
     public HealthTag healthTag { get { return _healthTag; } }
@@ -31,7 +34,7 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         Restore();
-     
+
     }
 
 
@@ -48,7 +51,7 @@ public class Health : MonoBehaviour
         //Is it already dead?
         if (currentHealthPoints <= 0) return;
 
-            
+
         currentHealthPoints -= damage;
         FindObjectOfType<AudioManager>().Play("Thud");
         if (currentHealthPoints <= 0)
@@ -77,6 +80,11 @@ public class Health : MonoBehaviour
         _maxHealthPoins = newMaxHealth;
 
         Restore();
+
+        if (modifyAction != null)
+        {
+            modifyAction.Invoke();
+        }
     }
 
 }

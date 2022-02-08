@@ -18,6 +18,8 @@ public class ChangeableSprite : MonoBehaviour
         }
     }
 
+    public bool blockChanges;
+
     SpriteRenderer _spriteRenderer;
     PolygonCollider2D _polygonCollider;
 
@@ -29,12 +31,7 @@ public class ChangeableSprite : MonoBehaviour
     Vector2Int lesserBound;
     Vector2Int greaterBound;
 
-    Vector3 _lastHit;
-
     Vector2 zeroPoint;
-
-    Vector3 first;
-    Vector3 last;
 
     private void Awake()
     {
@@ -54,7 +51,7 @@ public class ChangeableSprite : MonoBehaviour
         _bitArray = new BitArray(_spriteRenderer.sprite.texture.width * _spriteRenderer.sprite.texture.height);
         _bitArray.SetAll(true);
 
-        _originalPixels = _spriteRenderer.sprite.texture.GetPixels32();
+        UpdateOriginalPixels();
 
         zeroPoint = -new Vector2(_spriteRenderer.sprite.texture.width, _spriteRenderer.sprite.texture.height) * _distanceUnit * 0.5f;
 
@@ -114,6 +111,8 @@ public class ChangeableSprite : MonoBehaviour
 
     void Modify(Vector3 worldPosition, float radius, bool value)
     {
+        if (blockChanges) return;
+
         /*
             Stopwatch locationWatch = new Stopwatch();
             locationWatch.Start();
@@ -123,8 +122,6 @@ public class ChangeableSprite : MonoBehaviour
         Vector2 localPosition = transform.InverseTransformPoint(worldPosition);
 
         localPosition = localPosition - zeroPoint;
-
-        _lastHit = localPosition;
 
         //Snap bounds
         lesserBound = new Vector2Int((int)Mathf.Round((localPosition.x - radius) / _distanceUnit.x), (int)Mathf.Round((localPosition.y - radius) / _distanceUnit.y));
@@ -151,9 +148,6 @@ public class ChangeableSprite : MonoBehaviour
         {
             for (int j = lesserBound.y; j < greaterBound.y; j++)
             {
-                if (i == greaterBound.x - 1 && j == greaterBound.y - 1) last = new Vector3(i, j, 0) * _distanceUnit;
-                if (i == lesserBound.x && j == lesserBound.y) first = new Vector3(i, j, 0) * _distanceUnit;
-
                 if (_bitArray[i + _spriteRenderer.sprite.texture.width * j] != value)
                 {
                     if (Vector2.SqrMagnitude(localPosition - new Vector2(i, j) * _distanceUnit) < radius)
@@ -165,7 +159,6 @@ public class ChangeableSprite : MonoBehaviour
             }
         }
 
-        //locationWatch.Stop();
         #endregion
 
         if (!dirty) return;
@@ -195,7 +188,12 @@ public class ChangeableSprite : MonoBehaviour
         //modifyWatch.Stop();
         #endregion
 
-        #region Update Collider
+
+        UpdateCollider();
+    }
+
+    public void UpdateCollider()
+    {
         if (_polygonCollider)
         {
             //Stopwatch colliderWatch = new Stopwatch();
@@ -217,15 +215,21 @@ public class ChangeableSprite : MonoBehaviour
             }
             */
 
-            //colliderWatch.Stop();
         }
-
-
-
-        //UnityEngine.Debug.Log("Location : " + locationWatch.ElapsedMilliseconds);
-        //UnityEngine.Debug.Log("Add Component: " + colliderWatch.ElapsedMilliseconds);
-        //UnityEngine.Debug.Log("Modify: " + modifyWatch.ElapsedMilliseconds);
-
-        #endregion
     }
+
+    public void AddCollider()
+    {
+        if (_polygonCollider == null)
+        {
+            _polygonCollider = gameObject.AddComponent<PolygonCollider2D>();
+        }
+    }
+
+    public void UpdateOriginalPixels()
+    {
+        _originalPixels = _spriteRenderer.sprite.texture.GetPixels32();
+
+    }
+
 }

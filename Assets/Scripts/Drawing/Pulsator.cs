@@ -7,7 +7,7 @@ using DG.Tweening;
 public class Pulsator : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] [Range(0.1f, 2)] float animationDuration = 0.4f;
+    [SerializeField] [Range(0.1f, 5)] float animationDuration = 0.4f;
     [SerializeField] [Range(0.1f, 2)] float animationScale = 0.7f;
 
     [Space(5)]

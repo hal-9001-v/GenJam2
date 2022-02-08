@@ -4,8 +4,8 @@ using UnityEngine;
 public class SpriteDestroyer : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] [Range(0.1f, 1)] float _radius;
-    [SerializeField] [Range(0f, 1)] float _biteDistance;
+    [SerializeField] [Range(0.1f, 5)] float _radius;
+    [SerializeField] [Range(0f, 5)] float _biteDistance;
 
     [SerializeField] bool _hitOnlyOnce = true;
     bool _done;

@@ -18,10 +18,17 @@ public class HealthSliderHandler : MonoBehaviour
                 UpdateBar((float)_health.currentHealthPoints /(float) _health.maxHealthPoins);
             };
 
+            _health.modifyAction += () =>
+            {
+                UpdateBar((float)_health.currentHealthPoints / (float)_health.maxHealthPoins);
+            };
+
             _health.deadAction += () =>
             {
                 UpdateBar(0);
             };
+
+
         }
     }   
 

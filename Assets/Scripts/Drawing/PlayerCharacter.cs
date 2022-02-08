@@ -13,6 +13,7 @@ public class PlayerCharacter : MonoBehaviour
 
     EndGame _endgame;
 
+
     private void Awake()
     {
         //gameObject.tag = "Drawing";
@@ -33,6 +34,8 @@ public class PlayerCharacter : MonoBehaviour
     {
         StartCoroutine(Shake.DOShake(.20f, .5f,FindObjectOfType<Camera>().transform));  
         _pulsator.HurtAnimation();
+
+
     }
 
 
