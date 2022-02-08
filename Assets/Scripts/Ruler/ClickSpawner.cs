@@ -11,11 +11,13 @@ public class ClickSpawner : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRendererPreview;
     [SerializeField] Sprite rotationSprite;
     [SerializeField] Sprite improvingSprite;
-    [SerializeField] Sprite improvePaintSpawnable;
+    [SerializeField] DrawingBlobs improvePaintSpawnableWall;
+    [SerializeField] DrawingBlobs improvePaintSpawnableSoldier;
 
     SpriteRenderer cursorSpriteRenderer;
     RaycastHit2D hit;
-    float improvedElapsedCircles;
+    bool improving = false;
+    float improvedElapsedCircles = 0;
     string previousImprovingRulerName;
     private void Awake()
     {
@@ -27,7 +29,7 @@ public class ClickSpawner : MonoBehaviour
     private void Start()
     {
         spriteRendererPreview.enabled = false;
-        previousImprovingRulerName = "null";
+        previousImprovingRulerName = "Background";
     }
     private void Update()
     {
@@ -59,13 +61,12 @@ public class ClickSpawner : MonoBehaviour
     {
 
 
-        hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, Mathf.Infinity);
+        hit = CalculateHit();
+        RulerType type = rulerType.GetRulerType();
         if (hit.collider != null)
         {
-            Debug.Log("Holding mouse on: " + hit.collider.name);
 
             //If hit defense or drawing area Improve them, dont build 
-            RulerType type = rulerType.GetRulerType();
             switch (hit.collider.tag)
             {
 
@@ -75,17 +76,13 @@ public class ClickSpawner : MonoBehaviour
                 case "SoldierDrawing":
                     //rub to improve
                     ImproveDefense(type);
-                    break;
-                //if hit drawing or background, build
-                case "Drawing":
-                case "Background":
-                    SpawnPreview(type);
-                    break;
+                break;
 
+                default:
+                    if(improving == false)   SpawnPreview(type);
+                break;
             }
         }
-
-
 
     }
     private void ImproveDefense(RulerType type)
@@ -98,29 +95,30 @@ public class ClickSpawner : MonoBehaviour
         if (baseDefense == null)
         {
             cursorSpriteRenderer.sprite = rulerType.GetSpritedRuler(rulerType.GetRulerType());
-            improvedElapsedCircles = 0;
+            CancelImprove();
             return;
         }
         string hitname = baseDefense.name;
+        improving = true;
         //spawn circles
-
+        SpawnBlobs(baseDefense.GetRulerType());
         //if releases 
         if (!previousImprovingRulerName.Equals(hitname))
         {
             cursorSpriteRenderer.sprite = rulerType.GetSpritedRuler(rulerType.GetRulerType());
             //despawn circles
-            improvedElapsedCircles = 0f;
+            CancelImprove();
         }
         else
         {
             cursorSpriteRenderer.sprite = improvingSprite;
             //circles++
-            if (improvedElapsedCircles > rulerType.improveCircles)
+            if (improvedElapsedCircles*Time.deltaTime > rulerType.improveCircles*100*Time.deltaTime)
             {
                 SpriteRenderer sr = baseDefense.GetComponentInChildren<SpriteRenderer>();
                 ImproveRuler(hit.collider.gameObject, sr, baseDefense);
                 improvedElapsedCircles = 0f;
-
+                ErasePaint();
             }
 
         }   
@@ -129,15 +127,41 @@ public class ClickSpawner : MonoBehaviour
 
     }
 
-  
+    List<DrawingBlobs> blobs = new List<DrawingBlobs>();
+
+    private void SpawnBlobs(RulerType type){
+        
+        for(int i = 0; i< rulerType.improveCircles; i++){
+            
+            var randomRotation = Random.rotation;
+            var randomPosition = transform.position + new Vector3(Random.Range(0,2), Random.Range(0,2),0);
+            DrawingBlobs blob;
+            if(type == RulerType.Type1)  blob = Instantiate(improvePaintSpawnableWall,  randomPosition, randomRotation);
+            else  blob = Instantiate(improvePaintSpawnableSoldier,  randomPosition, randomRotation);
+            blob.gameObject.transform.parent = rulerType.transform;
+            blobs.Add(blob);
+            improvedElapsedCircles++;
+        }
+
+    }   
+
+    private void ErasePaint(){
+        
+        foreach(DrawingBlobs b in blobs){
+        
+            if(b!=null) Destroy(b.gameObject);
+
+        }
+
+    }
 
     private void ImproveRuler(GameObject rulerGO, SpriteRenderer sr, BaseDefense bd)
     {
 
-        Debug.Log("Improved" + rulerGO.name);
-        sr.sprite = rulerType.improveSprite;
+        sr.sprite = rulerType.GetImproveSprite(bd.GetRulerType());
         ink.SubInk(rulerType.improveCost);
         bd.ImproveHealth(rulerType.improveHealth);
+        improving = false;
         //cambiar el prefab a otro que mole más
     }
 
@@ -145,6 +169,7 @@ public class ClickSpawner : MonoBehaviour
 
     private void SpawnPreview(RulerType type)
     {
+        if(improving == true) return;
         //if enough ink. spawn sprite preview
         //then change cursor to rotation img
         //then unparent preview
@@ -184,36 +209,59 @@ public class ClickSpawner : MonoBehaviour
 
     }
     
-    private void OnRelease()
-    {
-
+    private void CancelImprove(){
         improvedElapsedCircles = 0f;
+        improving = false;
+        ErasePaint();
+    }   
+
+    RaycastHit2D CalculateHit(){
+            
+        var ray = Physics2D.Raycast(FindObjectOfType<Camera>().ScreenToWorldPoint(Input.mousePosition), Vector3.forward, 1);
+        
+        return ray;
+    }
+
+    private void OnRelease()
+    {   
+        CancelImprove();
+    
         //hide preview, then change cursor sprite to current type (from rotating sprite)
         spriteRendererPreview.enabled = false;
-
         cursorSpriteRenderer.sprite = rulerType.GetSpritedRuler(rulerType.GetRulerType());
-        //Debug.Log(hit.collider.tag);
-
-        hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector3.forward, Mathf.Infinity);
-        //if drawing of background -> spawn 
+          
+     
+        RulerType type = rulerType.GetRulerType();
+        hit = CalculateHit();
         if (hit.collider != null)
         {
+
+            //If hit defense or drawing area Improve them, dont build 
             switch (hit.collider.tag)
             {
-                case "Drawing":
-                case "Background":
-                    SpawnRuler();
-                    break;
 
+                case "WallDefense":
+                case "WallDrawing":
+                case "SoldierDefense":
+                case "SoldierDrawing":
+                    return;
+                break;
+
+                case "Background":
+                case "Drawing":
+                    if(improving == false) 
+                    SpawnRuler();
+                break;
             }
         }
 
-        //reset preview
+           //reset preview
         spriteRendererPreview.gameObject.transform.position = this.transform.position;
         this.transform.rotation = Quaternion.Euler(Vector3.zero);
         spriteRendererPreview.gameObject.transform.rotation = this.transform.rotation;
         spriteRendererPreview.gameObject.transform.parent = this.transform;
 
+     
     }
 
 

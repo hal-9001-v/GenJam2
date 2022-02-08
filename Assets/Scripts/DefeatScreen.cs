@@ -21,7 +21,7 @@ public class DefeatScreen : MonoBehaviour
 
         _retryButton.onClick.AddListener(Retry);
     }
-
+    
     public void Display()
     {
         _canvasGroup.alpha = 1;

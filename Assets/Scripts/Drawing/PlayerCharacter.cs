@@ -20,7 +20,7 @@ public class PlayerCharacter : MonoBehaviour
         _pulsator = FindObjectOfType<Pulsator>();
 
         _endgame = FindObjectOfType<EndGame>();
-
+        _health.hurtAction += Hurt;
         _endgame.retryCallback += _health.Restore;
     }
 
@@ -34,26 +34,6 @@ public class PlayerCharacter : MonoBehaviour
         StartCoroutine(Shake.DOShake(.20f, .5f,FindObjectOfType<Camera>().transform));  
         _pulsator.HurtAnimation();
     }
-
-    /*
-    private void OnTriggerEnter2D(Collider2D other) {
-        
-   
-       Debug.Log("Collision with" + other.gameObject.tag);
-       switch(other.gameObject.tag){
-
-           case "EnemyTest": 
-                Hurt(other.gameObject.GetComponent<EnemyTest>().damage);
-                Destroy(other.gameObject);
-                FindObjectOfType<Pulsator>().HurtAnimation();
-           break;
-
-
-           default: Hurt(1);
-           break;
-       }
-
-    }*/
 
 
 

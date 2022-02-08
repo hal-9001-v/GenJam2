@@ -104,18 +104,16 @@ public class RulerButtons : MonoBehaviour
             case 0:
             spawnCost = 10;
             improveCost = 20;
-            improveCircles = 2;
+            improveCircles = 5;
             improveHealth = 3;
-            improveSprite = rulerImproveSprites[0];
             
             break;
 
             case 1:
             spawnCost = 20;
             improveCost = 30;
-            improveCircles = 3;
+            improveCircles = 5;
             improveHealth = 3;
-            improveSprite = rulerImproveSprites[1];
             break;
 
             case 2:
@@ -126,6 +124,22 @@ public class RulerButtons : MonoBehaviour
             default:
             break;
         }
+
+    }   
+
+    public Sprite GetImproveSprite(RulerType type) {
+
+        switch(type){
+            case RulerType.Type1:
+            improveSprite = rulerImproveSprites[0];
+            break;
+            case RulerType.Type2:
+            improveSprite = rulerImproveSprites[1];
+            break;
+
+        }
+
+        return improveSprite;
 
     }
 

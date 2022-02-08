@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrawingbBlobs : MonoBehaviour
+public class DrawingBlobs : MonoBehaviour
 {
     PolygonCollider2D _polyCol;
 
@@ -10,8 +10,9 @@ public class DrawingbBlobs : MonoBehaviour
     private void Awake() {
         _polyCol = GetComponent<PolygonCollider2D>();
         gameObject.tag = "Paint";
-     }
+     }  
 
+  
 
      private void Update() {
          
