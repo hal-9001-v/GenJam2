@@ -20,16 +20,14 @@ public class EnemySpawner : MonoBehaviour
 
     float elapsedTime = 0;
 
-    private void Awake()
+  
+
+    private void Start()
     {
         _endGame = FindObjectOfType<EndGame>();
 
         _endGame.endGameCallback += StopSpawn;
         _endGame.retryCallback += ResumeSpawn;
-    }
-
-    private void Start()
-    {
         canSpawn = true;
     }
 
