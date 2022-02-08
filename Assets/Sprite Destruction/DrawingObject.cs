@@ -42,12 +42,7 @@ public class DrawingObject : MonoBehaviour
         _layerQueue.Clear();
         _lastLayer = null;
 
-        foreach (var layer in _layers)
-        {
-            layer.brush.enabled = false;
-            layer.follower.StopCompletely();
-            layer.changeableSprite.WipeOut();
-        }
+        Restore();
 
         foreach (var layer in _layers)
         {
@@ -67,7 +62,15 @@ public class DrawingObject : MonoBehaviour
         }
     }
 
-
+    public void Restore()
+    {
+        foreach (var layer in _layers)
+        {
+            layer.brush.enabled = false;
+            layer.follower.StopCompletely();
+            layer.changeableSprite.WipeOut();
+        }
+    }
 
     public void DrawNextLayer()
     {
