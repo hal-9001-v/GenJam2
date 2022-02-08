@@ -23,7 +23,7 @@ public class SoldierDefense : BaseDefense
     float _hitElapsedTime;
     float _idleElapsedTime;
 
-
+    bool draw;
 
     private void Awake()
     {
@@ -47,6 +47,7 @@ public class SoldierDefense : BaseDefense
 
     public override void Improve()
     {
+        _spanCountdown.RestartCountdow();
         _isImproved = true;
 
         _animator.SetBool(AnimatorImprovedBool, true);
@@ -57,14 +58,24 @@ public class SoldierDefense : BaseDefense
         FSMState idleState = new FSMState("Idle",
             () =>
             {
-                var fixedTime = _hitTime;
-                if (_isImproved) _hitTime *= 2;
+                float fixedTime;
+                if (_isImproved)
+                {
+                    fixedTime = _hitTime * 2;
+                }
+                else
+                {
+                    fixedTime = _hitTime;
+                }
 
                 if (_hitElapsedTime > fixedTime)
                 {
+
+
                     _idleElapsedTime = 0;
                     _animator.SetBool(AnimatorHitBool, false);
                     _attackHitbox.enabled = false;
+                    draw = false;
                     return true;
                 }
 
@@ -78,12 +89,12 @@ public class SoldierDefense : BaseDefense
         FSMState hitState = new FSMState("Hit",
             () =>
             {
-
                 if (_idleElapsedTime > _idleTime)
                 {
                     _hitElapsedTime = 0;
                     _animator.SetBool(AnimatorHitBool, true);
                     _attackHitbox.enabled = true;
+                    draw = true;
                     return true;
 
                 }
@@ -103,5 +114,12 @@ public class SoldierDefense : BaseDefense
 
 
 
+    }
+
+
+    private void OnDrawGizmos()
+    {
+        if (draw)
+            Gizmos.DrawWireSphere(transform.position, 9f);
     }
 }
