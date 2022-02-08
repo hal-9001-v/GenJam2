@@ -31,18 +31,21 @@ public class StartMenu : MonoBehaviour
 
     void LoadPlayLevel()
     {
+        FindObjectOfType<AudioManager>().Play("MenuBop");
         _levelLoader.LoadLevel(_levelLoader.FirstGameLevel);
     }
 
     void ShowTutorial()
     {
         _tutorialMenu.transform.DOLocalMove(Vector3.zero, 2);
+        FindObjectOfType<AudioManager>().Play("MenuBop");
         _mainMenu.interactable = false;
         _mainMenu.alpha = 0;
     }
 
     void ShowSettings()
     {
+        FindObjectOfType<AudioManager>().Play("MenuBop");
         _settingsMenu.transform.DOLocalMove(Vector3.zero, 2);
         _mainMenu.interactable = false;
         _mainMenu.alpha = 0;
@@ -50,6 +53,7 @@ public class StartMenu : MonoBehaviour
 
     public void HideSettings()
     {
+        FindObjectOfType<AudioManager>().Play("MenuBop");
         _settingsMenu.transform.DOLocalMove(new Vector3(-2000,0,0), 2);
         _mainMenu.interactable = true;
         _settingsMenu.interactable = false;
@@ -58,6 +62,7 @@ public class StartMenu : MonoBehaviour
    
     public void HideTutorial()
     {
+        FindObjectOfType<AudioManager>().Play("MenuBop");
         _settingsMenu.transform.DOLocalMove(new Vector3(2000,0,0), 2);
         _mainMenu.interactable = true;
         _tutorialMenu.interactable = false;

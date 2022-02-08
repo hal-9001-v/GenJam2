@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: aa9387d884bc88d47ac5b93d316ae349
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Draw in center scene.unity
+    guid: f6928c9b818c7ec4b9305a634fc86f63
   m_configObjects: {}
