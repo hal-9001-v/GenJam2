@@ -278,12 +278,12 @@ public class ClickSpawner : MonoBehaviour
             }
         }
 
-           //reset preview
+        //reset preview
         spriteRendererPreview.gameObject.transform.position = this.transform.position;
         this.transform.rotation = Quaternion.Euler(Vector3.zero);
         spriteRendererPreview.gameObject.transform.rotation = this.transform.rotation;
         spriteRendererPreview.gameObject.transform.parent = this.transform;
-
+        
      
     }
 
