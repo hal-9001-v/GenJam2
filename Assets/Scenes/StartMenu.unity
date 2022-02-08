@@ -2040,9 +2040,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 147254311382355560, guid: ef5ee0e1eba67204096a7a4f62dfb497, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1044441423}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 147254311382355560, guid: ef5ee0e1eba67204096a7a4f62dfb497, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 147254311382355560, guid: ef5ee0e1eba67204096a7a4f62dfb497, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HideThis
+      objectReference: {fileID: 0}
+    - target: {fileID: 147254311382355560, guid: ef5ee0e1eba67204096a7a4f62dfb497, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsMenuManager, ScriptsMain
+      objectReference: {fileID: 0}
+    - target: {fileID: 147254311382355560, guid: ef5ee0e1eba67204096a7a4f62dfb497, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 147254311584561675, guid: ef5ee0e1eba67204096a7a4f62dfb497, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

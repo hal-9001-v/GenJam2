@@ -59,7 +59,8 @@ public class SettingsMenuManager : MonoBehaviour
             } else Destroy(this.gameObject);
         //Find language context
             _languageContext = FindObjectOfType<LanguageContext>();
-
+        StartMenu s = FindObjectOfType<StartMenu>(); 
+            if(s) s._settingsMenu = this.ThisGroup;
         //Eng button
         _englishButton.onClick.AddListener(() =>
             {
@@ -76,6 +77,7 @@ public class SettingsMenuManager : MonoBehaviour
         ThisGroup = GetComponentInChildren<CanvasGroup>();
             SetSliders();
     }
+
 
       public void SetSliders()
     {
@@ -128,6 +130,12 @@ public class SettingsMenuManager : MonoBehaviour
     }
 
 
- 
-    
+    public void HideThis()
+    {
+        PauseMenu p = FindObjectOfType<PauseMenu>();
+        StartMenu s = FindObjectOfType<StartMenu>();
+        if (p) p.HideSettings();
+        else if (s) s.HideSettings();
+    }
+
 }

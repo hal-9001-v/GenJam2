@@ -15,8 +15,5 @@ public class ScaleBlink : MonoBehaviour
     {
         transform.DOScale(growValue, growDuration).SetLoops(-1,LoopType.Yoyo).SetUpdate(true).SetId("GrowAnimation");
     }
-    private void OnDestroy()
-    {
-        DOTween.Kill("GrowAnimation");
-    }
+  
 }

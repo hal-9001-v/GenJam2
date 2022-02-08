@@ -94,7 +94,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     void ReturnToMenu() {
-
+        Time.timeScale = 1F;
         _levelLoader.LoadLevel(0);
 
     }

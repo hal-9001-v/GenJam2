@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 public class LevelLoader : MonoBehaviour
 {
     public readonly int FirstGameLevel = 1;
@@ -17,7 +18,7 @@ public class LevelLoader : MonoBehaviour
         if (!_loader)
         {
             _loader = this;
-
+              
             DontDestroyOnLoad(this);
             slider = GetComponentInChildren<Slider>();
         }
@@ -37,13 +38,16 @@ public class LevelLoader : MonoBehaviour
         }
         else
         {
+
             _loader.LoadLevel(index);
+        
         }
     }
 
     IEnumerator LoadAsync(int index)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(index);
+        DOTween.KillAll();
 
         while (!operation.isDone)
         {
