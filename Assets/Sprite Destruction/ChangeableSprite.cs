@@ -25,7 +25,7 @@ public class ChangeableSprite : MonoBehaviour
     BitArray _bitArray;
     Color32[] _originalPixels;
 
-    float _distanceUnit;
+    Vector2 _distanceUnit;
     Vector2Int lesserBound;
     Vector2Int greaterBound;
 
@@ -33,11 +33,21 @@ public class ChangeableSprite : MonoBehaviour
 
     Vector2 zeroPoint;
 
+    Vector3 first;
+    Vector3 last;
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _polygonCollider = GetComponent<PolygonCollider2D>();
-        _distanceUnit = _spriteRenderer.bounds.size.x / _spriteRenderer.sprite.texture.width;
+
+        var originalAngle = transform.eulerAngles;
+
+        transform.eulerAngles = Vector3.zero;
+        _distanceUnit.x = _spriteRenderer.bounds.size.x / _spriteRenderer.sprite.texture.width;
+        _distanceUnit.y = _spriteRenderer.bounds.size.y / _spriteRenderer.sprite.texture.height;
+
+        transform.eulerAngles = originalAngle;
 
         _texture = new Texture2D(_spriteRenderer.sprite.texture.width, _spriteRenderer.sprite.texture.height, _spriteRenderer.sprite.texture.format, 1, true);
 
@@ -110,15 +120,15 @@ public class ChangeableSprite : MonoBehaviour
             */
 
         #region Find Destroyed Pixels
-        Vector2 localPosition = (worldPosition - transform.position);
+        Vector2 localPosition = transform.InverseTransformPoint(worldPosition);
+
         localPosition = localPosition - zeroPoint;
-        //Vector2 localPosition = transform.InverseTransformPoint(worldPosition);
 
         _lastHit = localPosition;
 
         //Snap bounds
-        lesserBound = new Vector2Int((int)Mathf.Round((localPosition.x - radius) / _distanceUnit), (int)Mathf.Round((localPosition.y - radius) / _distanceUnit));
-        greaterBound = new Vector2Int((int)Mathf.Round((localPosition.x + radius) / _distanceUnit), (int)Mathf.Round((localPosition.y + radius) / _distanceUnit));
+        lesserBound = new Vector2Int((int)Mathf.Round((localPosition.x - radius) / _distanceUnit.x), (int)Mathf.Round((localPosition.y - radius) / _distanceUnit.y));
+        greaterBound = new Vector2Int((int)Mathf.Round((localPosition.x + radius) / _distanceUnit.x), (int)Mathf.Round((localPosition.y + radius) / _distanceUnit.y));
 
         if (lesserBound.x < 0)
             lesserBound.x = 0;
@@ -127,10 +137,10 @@ public class ChangeableSprite : MonoBehaviour
             lesserBound.y = 0;
 
 
-        if (greaterBound.x >= _spriteRenderer.sprite.texture.width)
+        if (greaterBound.x > _spriteRenderer.sprite.texture.width)
             greaterBound.x = _spriteRenderer.sprite.texture.width;
 
-        if (greaterBound.y >= _spriteRenderer.sprite.texture.height)
+        if (greaterBound.y > _spriteRenderer.sprite.texture.height)
             greaterBound.y = _spriteRenderer.sprite.texture.height;
 
         bool dirty = false;
@@ -141,6 +151,9 @@ public class ChangeableSprite : MonoBehaviour
         {
             for (int j = lesserBound.y; j < greaterBound.y; j++)
             {
+                if (i == greaterBound.x - 1 && j == greaterBound.y - 1) last = new Vector3(i, j, 0) * _distanceUnit;
+                if (i == lesserBound.x && j == lesserBound.y) first = new Vector3(i, j, 0) * _distanceUnit;
+
                 if (_bitArray[i + _spriteRenderer.sprite.texture.width * j] != value)
                 {
                     if (Vector2.SqrMagnitude(localPosition - new Vector2(i, j) * _distanceUnit) < radius)
@@ -215,17 +228,4 @@ public class ChangeableSprite : MonoBehaviour
 
         #endregion
     }
-
-    private void OnDrawGizmos()
-    {
-        Vector3 zero = transform.TransformPoint(zeroPoint);
-        Vector3 last = transform.TransformPoint(_lastHit);
-
-        Gizmos.DrawWireSphere(zero + _lastHit, 0.5f);
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(zero, 0.5f);
-
-    }
-
 }
