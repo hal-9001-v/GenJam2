@@ -13,6 +13,13 @@ public abstract class BaseDefense : MonoBehaviour
     protected Health _health;
     protected SpanCoutdown _spanCountdown;
     protected RulerType type;
+    protected Animator _animator;
+
+    public Animator GetAnimator(){
+
+        return _animator;
+
+    }
     protected void Initialize()
     {
         _health = GetComponent<Health>();

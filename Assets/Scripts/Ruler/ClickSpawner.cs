@@ -163,6 +163,13 @@ public class ClickSpawner : MonoBehaviour
     {
 
         sr.sprite = rulerType.GetImproveSprite(bd.GetRulerType());
+        Animator anim = bd.GetAnimator();
+        if(anim){
+
+            anim.SetTrigger("Improve");
+
+        }
+        
         ink.SubInk(rulerType.improveCost);
         bd.ImproveHealth(rulerType.improveHealth);
         improving = false;

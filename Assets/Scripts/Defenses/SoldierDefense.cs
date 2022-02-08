@@ -9,6 +9,7 @@ public class SoldierDefense : BaseDefense
     {
         Initialize();
         type = RulerType.Type2;
+        _animator =  GetComponent<Animator>();
     }
 
     override protected void Die()
