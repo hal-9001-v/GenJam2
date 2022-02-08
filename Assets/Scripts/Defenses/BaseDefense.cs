@@ -15,7 +15,8 @@ public abstract class BaseDefense : MonoBehaviour
     protected RulerType type;
     protected Animator _animator;
 
-    public Animator GetAnimator(){
+    public Animator GetAnimator()
+    {
 
         return _animator;
 
@@ -29,23 +30,20 @@ public abstract class BaseDefense : MonoBehaviour
         _spanCountdown.endOfCountdown += Die;
 
     }
-    public RulerType GetRulerType(){
+    public RulerType GetRulerType()
+    {
 
         return type;
 
     }
     protected abstract void Die();
-    
 
-    void Hurt(){
-        StartCoroutine(Shake.DOShake(.15f, .3f,FindObjectOfType<Camera>().transform));  
-    }
-    
-    public void ImproveHealth(int newMaxHealth)
+
+    void Hurt()
     {
-        var health = GetComponent<Health>();
-
-        health.ModifyMaxHealth(newMaxHealth);
+        StartCoroutine(Shake.DOShake(.15f, .3f, FindObjectOfType<Camera>().transform));
     }
+
+    public abstract void Improve();
 
 }

@@ -12,9 +12,9 @@ public class DrawPolygonCollider2D : MonoBehaviour
     private List<LineRenderer> _lineList;
     private PolygonCollider2D _polygonCol;
     private int polycount;
+
     void Start()
-    {
-        
+    {    
         _lineList = new List<LineRenderer>();
         _polygonCol = GetComponent<PolygonCollider2D>();
         polycount = _polygonCol.pathCount;

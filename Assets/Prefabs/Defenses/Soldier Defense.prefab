@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5565851129857171837}
-  - component: {fileID: 7580005638705782126}
+  - component: {fileID: 1414343227772777528}
+  - component: {fileID: 8169236300015372819}
   m_Layer: 0
   m_Name: DrawingArea
   m_TagString: SoldierDrawing
@@ -31,8 +32,8 @@ Transform:
   m_Father: {fileID: 6275474046298306651}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7580005638705782126
-BoxCollider2D:
+--- !u!58 &1414343227772777528
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -44,19 +45,26 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.030563116, y: 0.070586324}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2.1817732, y: 1.7940946}
-  m_EdgeRadius: 0
+  m_Radius: 1.2
+--- !u!114 &8169236300015372819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5013880784832929831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1f5114da8326947977827c97b6a1bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targets:
+  - target: 1
+    damageScale: 1
+  _damage: 1
+  _spriteDestroyer: {fileID: 0}
 --- !u!1 &6275474046298306648
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076da4b1943d4e74496535194187b0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackHitbox: {fileID: 1414343227772777528}
+  _hitTime: 2
+  _idleTime: 1
 --- !u!114 &3559860900670199412
 MonoBehaviour:
   m_ObjectHideFlags: 0

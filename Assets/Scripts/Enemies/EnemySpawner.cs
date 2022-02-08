@@ -70,7 +70,7 @@ public class EnemySpawner : MonoBehaviour
     {
         float angle = GetSpawnAngle();
         float radius = GetSpawnRadius();
-        Instantiate(spawnablePrefab[Random.Range(0,3)], GetSpawnPos(angle, radius), this.transform.rotation);
+        Instantiate(spawnablePrefab[Random.Range(0,spawnablePrefab.Length)], GetSpawnPos(angle, radius), this.transform.rotation);
     }
 
     private Vector2 GetSpawnPos(float angle, float radius)

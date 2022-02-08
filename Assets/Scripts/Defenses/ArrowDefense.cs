@@ -18,4 +18,8 @@ public class ArrowDefense : BaseDefense
         Destroy(gameObject);
     }
 
+    public override void Improve()
+    {
+        
+    }
 }
