@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 61efa5ef3a3811c4099a1f8fab413b87
+guid: a318fb9eb0bf2bc4dbc3ded8eb605f4a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6673517640321346014
-    second: "M\xFAsica_0"
+      213: -526688822622613148
+    second: "Bote rect\xE1ngulo _0"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "M\xFAsica_0"
+      name: "Bote rect\xE1ngulo _0"
       rect:
         serializedVersion: 2
-        x: 599
-        y: 363
-        width: 366
-        height: 317
+        x: 1613
+        y: 339
+        width: 248
+        height: 687
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 226d75e5017e263a0800000000000000
-      internalID: -6673517640321346014
+      spriteID: 461196c6e43d0b8f0800000000000000
+      internalID: -526688822622613148
       vertices: []
       indices: 
       edges: []

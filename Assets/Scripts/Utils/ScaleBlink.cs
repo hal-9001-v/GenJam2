@@ -13,7 +13,7 @@ public class ScaleBlink : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.DOScale(growValue, growDuration).SetLoops(-1,LoopType.Yoyo).SetId("GrowAnimation");
+        transform.DOScale(growValue, growDuration).SetLoops(-1,LoopType.Yoyo).SetUpdate(true).SetId("GrowAnimation");
     }
     private void OnDestroy()
     {

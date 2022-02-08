@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 61efa5ef3a3811c4099a1f8fab413b87
+guid: 7e89e2bc2b949b845892ead9d2405437
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6673517640321346014
-    second: "M\xFAsica_0"
+      213: 3447021819624377115
+    second: IMG_6987_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "M\xFAsica_0"
+      name: IMG_6987_0
       rect:
         serializedVersion: 2
-        x: 599
-        y: 363
-        width: 366
-        height: 317
+        x: 327
+        y: 287
+        width: 606
+        height: 366
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 226d75e5017e263a0800000000000000
-      internalID: -6673517640321346014
+      spriteID: b1b4bb3f41846df20800000000000000
+      internalID: 3447021819624377115
       vertices: []
       indices: 
       edges: []
