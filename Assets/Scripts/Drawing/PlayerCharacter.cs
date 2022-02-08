@@ -14,9 +14,13 @@ public class PlayerCharacter : MonoBehaviour
 
     EndGame _endgame;
 
+    HealthCrossDrawer healthCrossDrawer;
+
 
     private void Awake()
     {
+        healthCrossDrawer = FindObjectOfType<HealthCrossDrawer>();
+
         //gameObject.tag = "Drawing";
         _health = GetComponent<Health>();
         _pulsator = FindObjectOfType<Pulsator>();
@@ -24,6 +28,7 @@ public class PlayerCharacter : MonoBehaviour
         _endgame = FindObjectOfType<EndGame>();
         _health.hurtAction += Hurt;
         _endgame.retryCallback += _health.Restore;
+        _endgame.retryCallback += healthCrossDrawer.Restore;
     }
 
     void Die()

@@ -31,10 +31,15 @@ public class HealthCrossDrawer : MonoBehaviour
             }
             layerCount++;
         }
-        
+
     }
 
+    public void Restore()
+    {
+        layerCount = 0;
 
+        _drawingObject.Restore();
+    }
 
 
 
