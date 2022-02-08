@@ -22,16 +22,14 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-
-    }
-
-
-    private void Start()
-    {
         _endGame = FindObjectOfType<EndGame>();
 
         _endGame.endGameCallback += StopSpawn;
         _endGame.retryCallback += ResumeSpawn;
+    }
+
+    private void Start()
+    {
         canSpawn = true;
     }
 
