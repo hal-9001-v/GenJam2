@@ -67,6 +67,7 @@ public class ClickSpawner : MonoBehaviour
         if (building) spawnRotation = HandleSpawnableRotation();
         hit = CalculateHit();
         RulerType type = rulerType.GetRulerType();
+
         if (hit.collider != null)
         {
             //If hit defense or drawing area Improve them, dont build 
@@ -119,7 +120,7 @@ public class ClickSpawner : MonoBehaviour
                 cursorSpriteRenderer.sprite = improvingSprite;
                 cursorSpriteRenderer.color = Color.white;
                 //circles++
-                if (improvedElapsedCircles * Time.deltaTime > rulerType.improveCircles * 100 * Time.deltaTime)
+                if (improvedElapsedCircles * Time.deltaTime > rulerType.improveCircles * 50 * Time.deltaTime)
                 {
                     SpriteRenderer sr = baseDefense.GetComponentInChildren<SpriteRenderer>();
                     ImproveRuler(hit.collider.gameObject, sr, baseDefense);

@@ -126,7 +126,7 @@ public class RulerButtons : MonoBehaviour
             case 0:
             spawnCost = 10;
             improveCost = 20;
-            improveCircles = 5;
+            improveCircles = 3;
             improveHealth = 3;
             
             break;
@@ -134,7 +134,7 @@ public class RulerButtons : MonoBehaviour
             case 1:
             spawnCost = 20;
             improveCost = 20;
-            improveCircles = 5;
+            improveCircles = 3;
             improveHealth = 3;
             break;
 
