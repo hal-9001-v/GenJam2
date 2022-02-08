@@ -1815,7 +1815,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.19266057, g: 1, b: 0, a: 0.36078432}
   m_FlipX: 0
@@ -2240,6 +2240,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 6722465877825174801, guid: 4390e49f4fe0cf04f881f0ee0c3b3c72, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6722465877825174803, guid: 4390e49f4fe0cf04f881f0ee0c3b3c72, type: 3}
       propertyPath: cursorSprite
       value: 

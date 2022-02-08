@@ -51,6 +51,7 @@ public class StartMenu : MonoBehaviour
 
     void ShowSettings()
     {
+        _settingsMenu = FindObjectOfType<SettingsMenuManager>().ThisGroup;
         FindObjectOfType<AudioManager>().Play("MenuBop");
         _settingsMenu.transform.DOLocalMove(Vector3.zero, 2);
         _settingsMenu.interactable = true;

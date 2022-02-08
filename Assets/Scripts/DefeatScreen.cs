@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class DefeatScreen : MonoBehaviour
@@ -24,9 +26,9 @@ public class DefeatScreen : MonoBehaviour
     
     public void Display()
     {
+        _canvasGroup.transform.DOLocalMoveY(0, 2f).SetUpdate(true);
         _canvasGroup.alpha = 1;
         _canvasGroup.blocksRaycasts = true;
-
     }
 
     public void Hide()
@@ -37,10 +39,12 @@ public class DefeatScreen : MonoBehaviour
 
     public void Retry()
     {
+        FindObjectOfType<AudioManager>().Play("MusicChild");
+        
         Hide();
-
         if (onRetryCallback != null)
         {
+
             onRetryCallback.Invoke();
         }
 
