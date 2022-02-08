@@ -28,6 +28,11 @@ public class SettingsMenuManager : MonoBehaviour
     [SerializeField] Button _englishButton;
     [SerializeField] Button _spanishButton;
 
+    [Header("Settings Title References")]
+    [SerializeField] Sprite _englishTitle;
+    [SerializeField] Sprite _spanishTitle;
+    [SerializeField] Image _titleRenderer;
+
     
     const string MasterAudioKey = "Master";
     const string MusicAudioKey = "Music";
@@ -39,11 +44,6 @@ public class SettingsMenuManager : MonoBehaviour
     const float MaxAudioValue = 1f;
     const float MinAudioValue = 0.001f;
 
-
-    private Animator _settingsAnimator;
-    private Animator _mainMenuAnimator;
-
-    private SettingsMenuManager[] _settingsMenu;
     public static SettingsMenuManager instance;
     private void Awake() {
 
@@ -112,12 +112,12 @@ public class SettingsMenuManager : MonoBehaviour
             case Language.English:
                 Debug.Log("English!");
                 _languageContext.ChangeLanguage(Language.English);
-
+                _titleRenderer.sprite = _englishTitle;
                 break;
             case Language.Spanish:
                 Debug.Log("Spanish!");
                 _languageContext.ChangeLanguage(Language.Spanish);
-
+                _titleRenderer.sprite = _spanishTitle;
                 break;
         }
     }

@@ -39,6 +39,7 @@ public class StartMenu : MonoBehaviour
     {
         _tutorialMenu.transform.DOLocalMove(Vector3.zero, 2);
         FindObjectOfType<AudioManager>().Play("MenuBop");
+        _tutorialMenu.interactable = true;
         _mainMenu.interactable = false;
         _mainMenu.alpha = 0;
     }
@@ -47,6 +48,7 @@ public class StartMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("MenuBop");
         _settingsMenu.transform.DOLocalMove(Vector3.zero, 2);
+        _settingsMenu.interactable = true;
         _mainMenu.interactable = false;
         _mainMenu.alpha = 0;
     }
@@ -63,7 +65,7 @@ public class StartMenu : MonoBehaviour
     public void HideTutorial()
     {
         FindObjectOfType<AudioManager>().Play("MenuBop");
-        _settingsMenu.transform.DOLocalMove(new Vector3(2000,0,0), 2);
+        _tutorialMenu.transform.DOLocalMove(new Vector3(2000,0,0), 2);
         _mainMenu.interactable = true;
         _tutorialMenu.interactable = false;
         _mainMenu.alpha = 1;
