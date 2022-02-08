@@ -38,9 +38,11 @@ public class EndGame : MonoBehaviour
 
     void NextLevel()
     {
+
         if (endGameCallback != null)
         {
             endGameCallback.Invoke();
+            FindObjectOfType<AudioManager>().Play("LevelComp");
         }
         RemoveDefenses();
 
@@ -49,6 +51,9 @@ public class EndGame : MonoBehaviour
 
     void Defeat()
     {
+        FindObjectOfType<AudioManager>().Play("LevelLost");
+        FindObjectOfType<AudioManager>().StopAllMusic();
+
         if (endGameCallback != null)
         {
             endGameCallback.Invoke();

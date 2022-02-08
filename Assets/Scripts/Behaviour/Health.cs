@@ -50,7 +50,7 @@ public class Health : MonoBehaviour
 
             
         currentHealthPoints -= damage;
-
+        FindObjectOfType<AudioManager>().Play("Thud");
         if (currentHealthPoints <= 0)
         {
             if (deadAction != null)

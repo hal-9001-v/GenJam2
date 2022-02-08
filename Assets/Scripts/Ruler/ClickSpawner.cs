@@ -89,7 +89,7 @@ public class ClickSpawner : MonoBehaviour
     private void ImproveDefense(RulerType type)
     {
 
-        if (ink.GetInk() < rulerType.improveCost) return;
+        if (CheckInk(1)) return;
         //if previous is now -> keep on improving else reset timer
         BaseDefense baseDefense = hit.collider.gameObject.GetComponent<BaseDefense>();
         if (baseDefense == null) baseDefense = hit.collider.gameObject.GetComponentInParent<BaseDefense>();
@@ -171,6 +171,7 @@ public class ClickSpawner : MonoBehaviour
         }
         
         ink.SubInk(rulerType.improveCost);
+        FindObjectOfType<AudioManager>().Play("Improve");
         bd.ImproveHealth(rulerType.improveHealth);
         improving = false;
         //cambiar el prefab a otro que mole más
@@ -187,13 +188,23 @@ public class ClickSpawner : MonoBehaviour
         //then unparent preview
         //then change preview sprite to current type sprite
         //then handle defense preview rotation
-        if (ink.GetInk() < rulerType.spawnCost) return;
+        if (CheckInk(0)) return;
         building = true;
         spriteRendererPreview.enabled = true;
         cursorSpriteRenderer.sprite = rotationSprite;
         spriteRendererPreview.gameObject.transform.parent = null;
         spriteRendererPreview.sprite = rulerType.GetSpritedRuler(type);
 
+    }  
+
+    private bool CheckInk(int i){
+        bool b = false;
+        if(i == 0) b = ink.GetInk() < rulerType.spawnCost;
+        if(i == 1) b = ink.GetInk() < rulerType.improveCost;
+
+        if(b) FindObjectOfType<AudioManager>().Play("InkError");
+
+        return b;
     }
 
     private Quaternion HandleSpawnableRotation()
@@ -280,7 +291,7 @@ public class ClickSpawner : MonoBehaviour
     private void SpawnRuler()
     {
         //if can spawn -> spawn
-        if (ink.GetInk() < rulerType.spawnCost) return;
+        if(CheckInk(0)) return;
         ink.SubInk(rulerType.spawnCost);
         rulerType.SpawnRuler(rulerType.GetRulerType(),
         spriteRendererPreview.gameObject.transform.position, spawnRotation);

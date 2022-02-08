@@ -26,6 +26,8 @@ public class AudioManager : MonoBehaviour
             if(s.sfx) s.audioSource.outputAudioMixerGroup = sfx;
             else s.audioSource.outputAudioMixerGroup = music;
         }
+
+        Play("MusicChild");
     }
 
     public void Play(string name)
@@ -74,4 +76,13 @@ public class AudioManager : MonoBehaviour
          s.audioSource.Stop();
     }
 
+    public void StopAllMusic(){
+
+        foreach(Sound s in sounds){
+
+            if(!s.sfx) s.audioSource.Stop();
+
+        }
+
+    }
 }

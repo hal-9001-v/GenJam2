@@ -41,18 +41,21 @@ public class RulerButtons : MonoBehaviour
           rulers[(int)RulerType.Type1].onClick.AddListener(() =>
         {
             //Ruler1
+            FindObjectOfType<AudioManager>().Play("MenuBop");
             SetRulerType((int)RulerType.Type1);
         });
 
          rulers[(int)RulerType.Type2].onClick.AddListener(() =>
         {
             //Ruler2
+            FindObjectOfType<AudioManager>().Play("MenuBop");
             SetRulerType((int)RulerType.Type2);
         });
 
          rulers[(int)RulerType.Type3].onClick.AddListener(() =>
         {
             //Ruler3
+            FindObjectOfType<AudioManager>().Play("MenuBop");
             SetRulerType((int)RulerType.Type3);
             
         });
@@ -64,6 +67,19 @@ public class RulerButtons : MonoBehaviour
     }
     public void SpawnRuler(RulerType rulerType, Vector2 pos, Quaternion rotation){
         
+        switch(rulerType){
+            case RulerType.Type1:
+                FindObjectOfType<AudioManager>().Play("RockSpawn");
+            break;
+            case RulerType.Type2:
+                FindObjectOfType<AudioManager>().Play("SoldierSpawn");
+            break;
+            case RulerType.Type3:
+                FindObjectOfType<AudioManager>().Play("BowSpawn");
+            break;
+            
+
+        }
         
         GameObject instance = Instantiate(rulerSpawnables[(int)rulerType], pos, rotation);
         instance.name =  _id.ToString();
@@ -85,6 +101,7 @@ public class RulerButtons : MonoBehaviour
     IEnumerator SpawnArrow(Vector3 pos,Vector3 newRot){
 
         yield return new WaitForSeconds(0.125f*3f);
+        FindObjectOfType<AudioManager>().Play("BowShoot");
         Instantiate(arrowPrefab, pos, Quaternion.Euler(newRot));
 
     }
