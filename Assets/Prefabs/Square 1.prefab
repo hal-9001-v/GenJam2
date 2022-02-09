@@ -445,6 +445,10 @@ PrefabInstance:
       propertyPath: _speed
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1423995247679477169, guid: 52686e40ce7442142adb4112f9c6efb9, type: 3}
+      propertyPath: _atAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1972479204036674622, guid: 52686e40ce7442142adb4112f9c6efb9, type: 3}
       propertyPath: _speed
       value: 6
