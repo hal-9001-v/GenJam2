@@ -14,6 +14,7 @@ public class EndGame : MonoBehaviour
     DefeatScreen _defeatScreen;
 
     public Action retryCallback { get { return _defeatScreen.onRetryCallback; } set { _defeatScreen.onRetryCallback = value; } }
+    
     public Action endGameCallback;
 
     private void Awake()

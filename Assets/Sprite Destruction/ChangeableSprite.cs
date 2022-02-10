@@ -9,6 +9,9 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class ChangeableSprite : MonoBehaviour
 {
+    [Header("Settings")]
+    [SerializeField] bool _startTransparent;
+
     public SpriteRenderer spriteRenderer
     {
         get
@@ -54,6 +57,8 @@ public class ChangeableSprite : MonoBehaviour
         UpdateOriginalPixels();
 
         zeroPoint = -new Vector2(_spriteRenderer.sprite.texture.width, _spriteRenderer.sprite.texture.height) * _distanceUnit * 0.5f;
+
+        if (_startTransparent) WipeOut();
 
     }
 

@@ -22,15 +22,12 @@ public class DrawingObject : MonoBehaviour
     {
         _layerQueue = new Queue<DrawLayer>();
 
-        
-    }
-
-    private void Start() {
         foreach (var layer in _layers)
         {
-            layer.changeableSprite.WipeOut();
+            //layer.changeableSprite.WipeOut();
             layer.brush.enabled = false;
         }
+
         if (_atAwake)
         {
             StartDraw(null);
